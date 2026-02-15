@@ -27,9 +27,10 @@ def main():
 
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ (Pridané Dobré Rádio + Oprava Vlny) ---
+    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ (Aktualizovaná Europa 2) ---
     elif params.get('country') == 'sk':
         radia_sk = [
+            {"nazov": "Europa 2", "url": "https://stream.bauermedia.sk/europa2-hi.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/europa2.png"},
             {"nazov": "Dobré Rádio", "url": "https://stream.dobreradio.sk/dobreradio.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/dobre.png"},
             {"nazov": "Rádio InfoVojna", "url": "https://stream1.infovojna.com:8000/live", "logo": "https://topradio.sk/_next/image?url=%2Fimages%2Finfovojna.jpg&w=640&q=75"},
             {"nazov": "Rádio_FM", "url": "https://icecast.stv.livebox.sk/fm_128.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/fm.png"},
@@ -44,7 +45,7 @@ def main():
             {"nazov": "Rádio Melody", "url": "https://stream.bauermedia.sk/melody-hi.mp3", "logo": "https://www.radiomelody.sk/cover.png?f=raw"},
             {"nazov": "Rádio Beta", "url": "http://109.71.67.102:8000/beta_live_high.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-beta/play_250_250.webp"},
             {"nazov": "Fun Rádio", "url": "https://stream.funradio.sk:8000/fun128.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/fun-radio/play_250_250.webp"},
-            {"nazov": "Rádio Vlna", "url": "https://stream.radiovlna.sk/vlna-128.mp3", "logo": "https://play-lh.googleusercontent.com/1XTpQPfIg8cZLeASZoAEJlHivVgu5mOlclO8JqFn2hMoY2LlXHdsmkKjeWX6L_9t_Q"}
+            {"nazov": "Rádio Vlna", "url": "https://stream.radiovlna.sk/vlna-128.mp3", "logo": "https://www.radiovlna.sk/static/images/logo.png"}
         ]
         zobraz_radia(handle, radia_sk)
 
