@@ -27,9 +27,10 @@ def main():
 
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ (Pridané Rádio Košice) ---
+    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ (Pridané Rádio Dychovka) ---
     elif params.get('country') == 'sk':
         radia_sk = [
+            {"nazov": "Rádio Dychovka", "url": "https://epanel.mediacp.eu:7661/stream", "logo": "https://www.radia.sk/_radia/loga/app/dychovka.webp?v=1"},
             {"nazov": "Rádio Košice", "url": "http://stream.ecce.sk:8000/radiokosice-128.mp3", "logo": "https://data.tvkosice.sk/images/cm/1000x0xresize/r/a/d/radiokosice/8e/fe/8efe9b31-bd08-4f5d-9168-fa656184fdd2.jpg"},
             {"nazov": "FIT Family RADIO", "url": "http://solid67.streamupsolutions.com:8052/;", "logo": "https://www.radia.sk/_radia/loga/app/fit-family.webp?v=1"},
             {"nazov": "Rádio WOW", "url": "https://radioserver.online:9816/radiowow.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/wow.png"},
