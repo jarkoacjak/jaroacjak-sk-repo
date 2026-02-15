@@ -10,31 +10,29 @@ def main():
     handle = int(sys.argv[1])
     params = dict(urllib.parse.parse_qsl(sys.argv[2][1:]))
 
-    # HLAVNÉ MENU (Výber krajiny)
+    # HLAVNÉ MENU
     if not params:
-        # Priečinok pre Slovenské rádiá
         url_sk = build_url({'country': 'sk'})
         li_sk = xbmcgui.ListItem(label="[B]🇸🇰 Slovenské rádiá[/B]")
         xbmcplugin.addDirectoryItem(handle, url_sk, li_sk, True)
 
-        # Priečinok pre České rádiá
         url_cz = build_url({'country': 'cz'})
         li_cz = xbmcgui.ListItem(label="[B]🇨🇿 České rádiá[/B]")
         xbmcplugin.addDirectoryItem(handle, url_cz, li_cz, True)
 
         xbmcplugin.endOfDirectory(handle)
 
-    # ZOZNAM SLOVENSKÝCH RÁDIÍ
+    # SLOVENSKÉ RÁDIÁ (S novou adresou pre Beta)
     elif params.get('country') == 'sk':
         radia_sk = [
-            {"nazov": "Rádio Beta", "url": "http://stream.betaradio.sk:8000/128.mp3", "logo": "https://www.betaradio.sk/wp-content/themes/beta-radio/img/logo.png"},
+            {"nazov": "Rádio Beta", "url": "http://109.71.67.102:8000/beta_live_high.mp3", "logo": "https://www.betaradio.sk/wp-content/themes/beta-radio/img/logo.png"},
             {"nazov": "Rádio Expres", "url": "https://stream.expres.sk/128.mp3", "logo": "https://www.expres.sk/wp-content/themes/expres2017/img/logo-expres.png"},
             {"nazov": "Fun Rádio", "url": "https://stream.funradio.sk:8000/fun128.mp3", "logo": "https://www.funradio.sk/static/images/logo.png"},
             {"nazov": "Rádio Vlna", "url": "https://stream.radiovlna.sk/vlna-128.mp3", "logo": "https://www.radiovlna.sk/static/images/logo.png"}
         ]
         zobraz_radia(handle, radia_sk)
 
-    # ZOZNAM ČESKÝCH RÁDIÍ
+    # ČESKÉ RÁDIÁ
     elif params.get('country') == 'cz':
         radia_cz = [
             {"nazov": "Rádio Impuls", "url": "http://icecast5.play.cz/impuls128.mp3", "logo": "https://www.impuls.cz/img/logo-impuls.png"},
