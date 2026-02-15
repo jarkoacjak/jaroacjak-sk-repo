@@ -11,64 +11,70 @@ def main():
     handle = int(sys.argv[1])
     params = dict(urllib.parse.parse_qsl(sys.argv[2][1:]))
 
-    # --- 1. HLAVNÉ MENU ---
+    # --- 1. HLAVNÉ MENU (Výber krajiny) ---
     if not params:
-        # Slovenské rádiá
-        url_sk = build_url({'mode': 'list_radios', 'country': 'sk'})
+        # Slovensko
+        url_sk = build_url({'country': 'sk'})
         li_sk = xbmcgui.ListItem(label="[B]🇸🇰 SLOVENSKÉ RÁDIÁ[/B]")
         li_sk.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/200px-Flag_of_Slovakia.svg.png'})
         xbmcplugin.addDirectoryItem(handle, url_sk, li_sk, True)
 
-        # České rádiá
-        url_cz = build_url({'mode': 'list_radios', 'country': 'cz'})
+        # Česko
+        url_cz = build_url({'country': 'cz'})
         li_cz = xbmcgui.ListItem(label="[B]🇨🇿 ČESKÉ RÁDIÁ[/B]")
         li_cz.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/200px-Flag_of_the_Czech_Republic.svg.png'})
         xbmcplugin.addDirectoryItem(handle, url_cz, li_cz, True)
 
-        # NOVINKA: FREE TV SEKCIÁ
-        url_tv = build_url({'mode': 'list_tv'})
-        li_tv = xbmcgui.ListItem(label="[B]📺 FREE TV SK/CZ[/B]")
-        li_tv.setArt({'icon': 'https://cdn-icons-png.flaticon.com/512/716/716429.png'})
-        xbmcplugin.addDirectoryItem(handle, url_tv, li_tv, True)
-
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 2. LOGIKA PRE RÁDIÁ ---
-    elif params.get('mode') == 'list_radios':
-        krajina = params.get('country')
-        if krajina == 'sk':
-            polozky = [
-                {"nazov": "Fresh Rádio", "url": "https://icecast2.radionet.sk/freshradio.sk", "logo": "https://myonlineradio.sk/public/uploads/radio_img/fresh-radio/play_250_250.webp"},
-                {"nazov": "Rádio Rock", "url": "https://stream.bauermedia.sk/rock-hi.mp3", "logo": "https://radiorock.sk/intro-v2.png"},
-                {"nazov": "Europa 2", "url": "https://stream.bauermedia.sk/europa2-hi.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/europa2.png"},
-                {"nazov": "Rádio Slovensko", "url": "https://icecast.stv.livebox.sk/slovensko_128.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-slovensko/play_250_250.webp"}
-            ]
-        else: # CZ rádia
-            polozky = [
-                {"nazov": "Rádio Kiss", "url": "https://ice.actve.net/fm-kiss-128", "logo": "https://www.kiss.cz/assets/img/logo.png"},
-                {"nazov": "Rádio Impuls", "url": "http://icecast5.play.cz/impuls128.mp3", "logo": "https://www.impuls.cz/img/logo-impuls.png"}
-            ]
-        zobraz_obsah(handle, polozky, is_video=False)
-
-    # --- 3. LOGIKA PRE TV ---
-    elif params.get('mode') == 'list_tv':
-        tv_kanaly = [
-            {"nazov": "RTVS Jednotka", "url": "https://cdn.example.com/jednotka.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/RTVS_Jednotka_logo.svg/512px-RTVS_Jednotka_logo.svg.png"},
-            {"nazov": "RTVS Dvojka", "url": "https://cdn.example.com/dvojka.m3u8", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/RTVS_Dvojka_logo.svg/512px-RTVS_Dvojka_logo.svg.png"}
+    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ (Pridané Fresh Rádio) ---
+    elif params.get('country') == 'sk':
+        radia_sk = [
+            {"nazov": "Fresh Rádio", "url": "https://icecast2.radionet.sk/freshradio.sk", "logo": "https://myonlineradio.sk/public/uploads/radio_img/fresh-radio/play_250_250.webp"},
+            {"nazov": "Rádio Rock", "url": "https://stream.bauermedia.sk/rock-hi.mp3", "logo": "https://radiorock.sk/intro-v2.png"},
+            {"nazov": "Europa 2", "url": "https://stream.bauermedia.sk/europa2-hi.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/europa2.png"},
+            {"nazov": "Dobré Rádio", "url": "https://stream.dobreradio.sk/dobreradio.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/dobre.png"},
+            {"nazov": "Rádio InfoVojna", "url": "https://stream1.infovojna.com:8000/live", "logo": "https://topradio.sk/_next/image?url=%2Fimages%2Finfovojna.jpg&w=640&q=75"},
+            {"nazov": "Rádio_FM", "url": "https://icecast.stv.livebox.sk/fm_128.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/fm.png"},
+            {"nazov": "Rádio Dychovka", "url": "https://epanel.mediacp.eu:7661/stream", "logo": "https://www.radia.sk/_radia/loga/app/dychovka.webp?v=1"},
+            {"nazov": "Rádio Košice", "url": "http://stream.ecce.sk:8000/radiokosice-128.mp3", "logo": "https://data.tvkosice.sk/images/cm/1000x0xresize/r/a/d/radiokosice/8e/fe/8efe9b31-bd08-4f5d-9168-fa656184fdd2.jpg"},
+            {"nazov": "FIT Family RADIO", "url": "http://solid67.streamupsolutions.com:8052/;", "logo": "https://www.radia.sk/_radia/loga/app/fit-family.webp?v=1"},
+            {"nazov": "Rádio WOW", "url": "https://radioserver.online:9816/radiowow.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/wow.png"},
+            {"nazov": "Rádio Slovensko", "url": "https://icecast.stv.livebox.sk/slovensko_128.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-slovensko/play_250_250.webp"},
+            {"nazov": "Detské Rádio", "url": "https://stream.21.sk/detskeradio-192.mp3", "logo": "https://data.tvkosice.sk/images/cm/1000x0xresize/r/a/d/radiokosice/08/80/0880daa2-a629-4ce0-9bf9-ab7765572c2f.jpg"},
+            {"nazov": "Rádio Frontinus", "url": "http://stream.frontinus.sk:8000/frontinus128.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-frontinus/play_250_250.webp"},
+            {"nazov": "Rádio Expres", "url": "https://stream.expres.sk/128.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/expres.png"},
+            {"nazov": "Rádio Melody", "url": "https://stream.bauermedia.sk/melody-hi.mp3", "logo": "https://www.radiomelody.sk/cover.png?f=raw"},
+            {"nazov": "Rádio Beta", "url": "http://109.71.67.102:8000/beta_live_high.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-beta/play_250_250.webp"},
+            {"nazov": "Fun Rádio", "url": "https://stream.funradio.sk:8000/fun128.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/fun-radio/play_250_250.webp"},
+            {"nazov": "Rádio Vlna", "url": "https://stream.radiovlna.sk/vlna-128.mp3", "logo": "https://www.radiovlna.sk/static/images/logo.png"}
         ]
-        zobraz_obsah(handle, tv_kanaly, is_video=True)
+        zobraz_radia(handle, radia_sk)
 
-# Spoločná funkcia na zobrazenie
-def zobraz_obsah(handle, zoznam, is_video):
-    for p in zoznam:
-        li = xbmcgui.ListItem(label=p["nazov"])
-        li.setArt({'thumb': p["logo"], 'icon': p["logo"]})
-        if is_video:
-            li.setInfo('video', {'title': p["nazov"]})
-        else:
-            li.setInfo('music', {'title': p["nazov"]})
+    # --- 3. ZOZNAM ČESKÝCH RÁDIÍ ---
+    elif params.get('country') == 'cz':
+        radia_cz = [
+            {"nazov": "Rádio Kiss", "url": "https://ice.actve.net/fm-kiss-128", "logo": "https://www.kiss.cz/assets/img/logo.png"},
+            {"nazov": "Rádio Impuls", "url": "http://icecast5.play.cz/impuls128.mp3", "logo": "https://www.impuls.cz/img/logo-impuls.png"},
+            {"nazov": "Evropa 2", "url": "https://ice.actve.net/fm-evropa2-128", "logo": "https://www.evropa2.cz/wp-content/themes/evropa2/assets/img/logo.png"},
+            {"nazov": "Frekvence 1", "url": "https://ice.actve.net/fm-frekvence1-128", "logo": "https://www.frekvence1.cz/img/logo-f1.png"},
+            {"nazov": "Rádio Blaník", "url": "http://ice.abradio.cz/blanikfm128.mp3", "logo": "https://radioblanik.cz/wp-content/themes/blanik/img/logo.png"}
+        ]
+        zobraz_radia(handle, radia_cz)
+
+# Univerzálna funkcia na zobrazenie zoznamu
+def zobraz_radia(handle, zoznam):
+    for radio in zoznam:
+        li = xbmcgui.ListItem(label=radio["nazov"])
+        li.setArt({
+            'thumb': radio["logo"],
+            'icon': radio["logo"],
+            'poster': radio["logo"],
+            'fanart': radio["logo"]
+        })
+        li.setInfo('video', {'title': radio["nazov"]})
         li.setProperty('IsPlayable', 'true')
-        xbmcplugin.addDirectoryItem(handle, p["url"], li, False)
+        xbmcplugin.addDirectoryItem(handle, radio["url"], li, False)
     xbmcplugin.endOfDirectory(handle)
 
 if __name__ == '__main__':
