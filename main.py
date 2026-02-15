@@ -5,8 +5,14 @@ import xbmcplugin
 def main():
     handle = int(sys.argv[1])
     
-    # Zoznam rádií s URL adresami a LOGAMI
+    # AKTUALIZOVANÝ ZOZNAM RÁDIÍ
     radia = [
+        {
+            "nazov": "Rádio Beta",
+            "url": "http://stream.betaradio.sk:8000/128.mp3",
+            "logo": "https://www.betaradio.sk/wp-content/themes/beta-radio/img/logo.png",
+            "zaner": "Regionálne / Mix"
+        },
         {
             "nazov": "Rádio Expres",
             "url": "https://stream.expres.sk/128.mp3",
@@ -30,20 +36,22 @@ def main():
     for radio in radia:
         list_item = xbmcgui.ListItem(label=radio["nazov"])
         
-        # Nastavenie loga (Art)
+        # Logá a ikonky
         list_item.setArt({
             'thumb': radio["logo"],
-            'icon': radio["logo"],
-            'fanart': radio["logo"]
+            'icon': radio["logo"]
         })
         
-        # Nastavenie informácií
+        # Informácie o stope
         list_item.setInfo('video', {
             'title': radio["nazov"],
             'genre': radio["zaner"]
         })
         
+        # Dôležité pre streamovanie
         list_item.setProperty('IsPlayable', 'true')
+        
+        # Pridanie do zoznamu Kodi
         xbmcplugin.addDirectoryItem(handle, radio["url"], list_item, False)
 
     xbmcplugin.endOfDirectory(handle)
