@@ -27,9 +27,10 @@ def main():
 
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ (Pridané WOW + Funkčné logá) ---
+    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ (Pridané FIT Family + WOW + ostatné) ---
     elif params.get('country') == 'sk':
         radia_sk = [
+            {"nazov": "FIT Family RADIO", "url": "http://solid67.streamupsolutions.com:8052/;", "logo": "https://www.radia.sk/_radia/loga/app/fit-family.webp?v=1"},
             {"nazov": "Rádio WOW", "url": "https://radioserver.online:9816/radiowow.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/wow.png"},
             {"nazov": "Rádio Slovensko", "url": "https://icecast.stv.livebox.sk/slovensko_128.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-slovensko/play_250_250.webp"},
             {"nazov": "Detské Rádio", "url": "https://stream.21.sk/detskeradio-192.mp3", "logo": "https://data.tvkosice.sk/images/cm/1000x0xresize/r/a/d/radiokosice/08/80/0880daa2-a629-4ce0-9bf9-ab7765572c2f.jpg"},
@@ -63,7 +64,6 @@ def zobraz_radia(handle, zoznam):
             'poster': radio["logo"],
             'fanart': radio["logo"]
         })
-        # Nastavenie informácií (podporuje ukladanie do obľúbených)
         li.setInfo('video', {'title': radio["nazov"]})
         li.setProperty('IsPlayable', 'true')
         xbmcplugin.addDirectoryItem(handle, radio["url"], li, False)
