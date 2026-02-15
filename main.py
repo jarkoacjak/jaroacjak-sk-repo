@@ -27,9 +27,10 @@ def main():
 
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ (Aktualizované logá + Frontinus) ---
+    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ (Pridané WOW + Funkčné logá) ---
     elif params.get('country') == 'sk':
         radia_sk = [
+            {"nazov": "Rádio WOW", "url": "https://radioserver.online:9816/radiowow.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/wow.png"},
             {"nazov": "Rádio Slovensko", "url": "https://icecast.stv.livebox.sk/slovensko_128.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-slovensko/play_250_250.webp"},
             {"nazov": "Detské Rádio", "url": "https://stream.21.sk/detskeradio-192.mp3", "logo": "https://data.tvkosice.sk/images/cm/1000x0xresize/r/a/d/radiokosice/08/80/0880daa2-a629-4ce0-9bf9-ab7765572c2f.jpg"},
             {"nazov": "Rádio Frontinus", "url": "http://stream.frontinus.sk:8000/frontinus128.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-frontinus/play_250_250.webp"},
@@ -52,7 +53,7 @@ def main():
         ]
         zobraz_radia(handle, radia_cz)
 
-# Funkcia na zobrazenie zoznamu
+# Univerzálna funkcia na zobrazenie zoznamu
 def zobraz_radia(handle, zoznam):
     for radio in zoznam:
         li = xbmcgui.ListItem(label=radio["nazov"])
@@ -62,6 +63,7 @@ def zobraz_radia(handle, zoznam):
             'poster': radio["logo"],
             'fanart': radio["logo"]
         })
+        # Nastavenie informácií (podporuje ukladanie do obľúbených)
         li.setInfo('video', {'title': radio["nazov"]})
         li.setProperty('IsPlayable', 'true')
         xbmcplugin.addDirectoryItem(handle, radio["url"], li, False)
@@ -69,4 +71,4 @@ def zobraz_radia(handle, zoznam):
 
 if __name__ == '__main__':
     main()
-        
+    
