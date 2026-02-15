@@ -27,10 +27,11 @@ def main():
 
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ ---
+    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ (Pridané Rádio Melody) ---
     elif params.get('country') == 'sk':
         radia_sk = [
             {"nazov": "Rádio Slovensko", "url": "https://icecast.stv.livebox.sk/slovensko_128.mp3", "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/R%C3%A1dio_Slovensko.svg/1200px-R%C3%A1dio_Slovensko.svg.png"},
+            {"nazov": "Rádio Melody", "url": "https://stream.radiomelody.sk/melody-128.mp3", "logo": "https://www.radiomelody.sk/static/images/logo.png"},
             {"nazov": "Rádio Beta", "url": "http://109.71.67.102:8000/beta_live_high.mp3", "logo": "https://www.betaradio.sk/wp-content/themes/beta-radio/img/logo.png"},
             {"nazov": "Rádio Expres", "url": "https://stream.expres.sk/128.mp3", "logo": "https://www.expres.sk/wp-content/themes/expres2017/img/logo-expres.png"},
             {"nazov": "Fun Rádio", "url": "https://stream.funradio.sk:8000/fun128.mp3", "logo": "https://www.funradio.sk/static/images/logo.png"},
@@ -65,4 +66,4 @@ def zobraz_radia(handle, zoznam):
 
 if __name__ == '__main__':
     main()
-            
+    
