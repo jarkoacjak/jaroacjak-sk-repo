@@ -3,34 +3,33 @@ import urllib.parse
 import xbmcgui
 import xbmcplugin
 
-# 1. Funkcia na generovanie URL
+# Funkcia na generovanie URL adries
 def build_url(query):
     return sys.argv[0] + '?' + urllib.parse.urlencode(query)
 
 def main():
     handle = int(sys.argv[1])
-    
-    # 2. Bezpečné načítanie parametrov
-    param_string = sys.argv[2][1:]
-    params = dict(urllib.parse.parse_qsl(param_string))
+    # Bezpečné spracovanie parametrov
+    arg_string = sys.argv[2][1:] if len(sys.argv[2]) > 1 else ""
+    params = dict(urllib.parse.parse_qsl(arg_string))
 
-    # --- HLAVNÉ MENU ---
+    # --- 1. HLAVNÉ MENU (Výber krajiny) ---
     if not params:
         # Slovensko
-        li = xbmcgui.ListItem(label="[B]🇸🇰 SLOVENSKÉ RÁDIÁ[/B]")
-        li.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/200px-Flag_of_Slovakia.svg.png'})
-        xbmcplugin.addDirectoryItem(handle, build_url({'country': 'sk'}), li, True)
+        li_sk = xbmcgui.ListItem(label="[B]🇸🇰 SLOVENSKÉ RÁDIÁ[/B]")
+        li_sk.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/200px-Flag_of_Slovakia.svg.png'})
+        xbmcplugin.addDirectoryItem(handle, build_url({'country': 'sk'}), li_sk, True)
 
         # Česko
-        li = xbmcgui.ListItem(label="[B]🇨🇿 ČESKÉ RÁDIÁ[/B]")
-        li.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/200px-Flag_of_the_Czech_Republic.svg.png'})
-        xbmcplugin.addDirectoryItem(handle, build_url({'country': 'cz'}), li, True)
+        li_cz = xbmcgui.ListItem(label="[B]🇨🇿 ČESKÉ RÁDIÁ[/B]")
+        li_cz.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/200px-Flag_of_the_Czech_Republic.svg.png'})
+        xbmcplugin.addDirectoryItem(handle, build_url({'country': 'cz'}), li_cz, True)
 
         xbmcplugin.endOfDirectory(handle)
 
-    # --- ZOZNAM SLOVENSKÝCH RÁDIÍ ---
+    # --- 2. KOMPLETNÝ ZOZNAM SLOVENSKÝCH RÁDIÍ ---
     elif params.get('country') == 'sk':
-        radia = [
+        radia_sk = [
             {"nazov": "Rádio Viva", "url": "http://stream.sepia.sk:8000/viva320.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-viva/play_250_250.webp"},
             {"nazov": "Fresh Rádio", "url": "https://icecast2.radionet.sk/freshradio.sk", "logo": "https://myonlineradio.sk/public/uploads/radio_img/fresh-radio/play_250_250.webp"},
             {"nazov": "Rádio Rock", "url": "https://stream.bauermedia.sk/rock-hi.mp3", "logo": "https://radiorock.sk/intro-v2.png"},
@@ -51,7 +50,7 @@ def main():
             {"nazov": "Fun Rádio", "url": "https://stream.funradio.sk:8000/fun128.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/fun-radio/play_250_250.webp"},
             {"nazov": "Rádio Vlna", "url": "https://stream.radiovlna.sk/vlna-128.mp3", "logo": "https://www.radiovlna.sk/static/images/logo.png"}
         ]
-        for radio in radia:
+        for radio in radia_sk:
             li = xbmcgui.ListItem(label=radio["nazov"])
             li.setArt({'icon': radio["logo"], 'thumb': radio["logo"]})
             li.setInfo('audio', {'title': radio["nazov"]})
@@ -59,7 +58,7 @@ def main():
             xbmcplugin.addDirectoryItem(handle, radio["url"], li, False)
         xbmcplugin.endOfDirectory(handle)
 
-    # --- ZOZNAM ČESKÝCH RÁDIÍ ---
+    # --- 3. KOMPLETNÝ ZOZNAM ČESKÝCH RÁDIÍ ---
     elif params.get('country') == 'cz':
         radia_cz = [
             {"nazov": "Rádio Kiss", "url": "https://ice.actve.net/fm-kiss-128", "logo": "https://www.kiss.cz/assets/img/logo.png"},
@@ -78,4 +77,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-        
+    
