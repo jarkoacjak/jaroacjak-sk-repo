@@ -9,7 +9,9 @@ def build_url(query):
 
 def main():
     handle = int(sys.argv[1])
-    params = dict(urllib.parse.parse_qsl(sys.argv[2][1:]))
+    # Bezpečné načítanie parametrov
+    arg_string = sys.argv[2][1:] if len(sys.argv[2]) > 1 else ""
+    params = dict(urllib.parse.parse_qsl(arg_string))
 
     # --- 1. HLAVNÉ MENU (Výber krajiny) ---
     if not params:
@@ -27,7 +29,7 @@ def main():
 
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ (Vrátane Rádia Viva) ---
+    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ ---
     elif params.get('country') == 'sk':
         radia_sk = [
             {"nazov": "Rádio Viva", "url": "http://stream.sepia.sk:8000/viva320.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-viva/play_250_250.webp"},
@@ -73,7 +75,11 @@ def zobraz_radia(handle, zoznam):
             'poster': radio["logo"],
             'fanart': radio["logo"]
         })
-        li.setInfo('audio', {'title': radio["nazov"]})
+        # Oprava: Info tag pre audio v Kodi 20/21
+        info = li.getVideoInfoTag() if hasattr(li, "getVideoInfoTag") else None
+        if info:
+            info.setTitle(radio["nazov"])
+        
         li.setProperty('IsPlayable', 'true')
         xbmcplugin.addDirectoryItem(handle, radio["url"], li, False)
     xbmcplugin.endOfDirectory(handle)
