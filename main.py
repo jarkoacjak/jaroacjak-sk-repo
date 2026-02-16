@@ -3,31 +3,33 @@ import urllib.parse
 import xbmcgui
 import xbmcplugin
 
-# Funkcia na generovanie URL adries
+# Funkcia na generovanie URL adries pre menu
 def build_url(query):
     return sys.argv[0] + '?' + urllib.parse.urlencode(query)
 
 def main():
     handle = int(sys.argv[1])
-    # Bezpečné spracovanie parametrov
-    arg_string = sys.argv[2][1:] if len(sys.argv[2]) > 1 else ""
-    params = dict(urllib.parse.parse_qsl(arg_string))
+    # Bezpečné získanie parametrov
+    param_string = sys.argv[2][1:] if len(sys.argv[2]) > 1 else ""
+    params = dict(urllib.parse.parse_qsl(param_string))
 
     # --- 1. HLAVNÉ MENU (Výber krajiny) ---
     if not params:
         # Slovensko
+        url_sk = build_url({'country': 'sk'})
         li_sk = xbmcgui.ListItem(label="[B]🇸🇰 SLOVENSKÉ RÁDIÁ[/B]")
         li_sk.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/200px-Flag_of_Slovakia.svg.png'})
-        xbmcplugin.addDirectoryItem(handle, build_url({'country': 'sk'}), li_sk, True)
+        xbmcplugin.addDirectoryItem(handle, url_sk, li_sk, True)
 
         # Česko
+        url_cz = build_url({'country': 'cz'})
         li_cz = xbmcgui.ListItem(label="[B]🇨🇿 ČESKÉ RÁDIÁ[/B]")
         li_cz.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/200px-Flag_of_the_Czech_Republic.svg.png'})
-        xbmcplugin.addDirectoryItem(handle, build_url({'country': 'cz'}), li_cz, True)
+        xbmcplugin.addDirectoryItem(handle, url_cz, li_cz, True)
 
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 2. KOMPLETNÝ ZOZNAM SLOVENSKÝCH RÁDIÍ ---
+    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ ---
     elif params.get('country') == 'sk':
         radia_sk = [
             {"nazov": "Rádio Viva", "url": "http://stream.sepia.sk:8000/viva320.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-viva/play_250_250.webp"},
@@ -50,15 +52,9 @@ def main():
             {"nazov": "Fun Rádio", "url": "https://stream.funradio.sk:8000/fun128.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/fun-radio/play_250_250.webp"},
             {"nazov": "Rádio Vlna", "url": "https://stream.radiovlna.sk/vlna-128.mp3", "logo": "https://www.radiovlna.sk/static/images/logo.png"}
         ]
-        for radio in radia_sk:
-            li = xbmcgui.ListItem(label=radio["nazov"])
-            li.setArt({'icon': radio["logo"], 'thumb': radio["logo"]})
-            li.setInfo('audio', {'title': radio["nazov"]})
-            li.setProperty('IsPlayable', 'true')
-            xbmcplugin.addDirectoryItem(handle, radio["url"], li, False)
-        xbmcplugin.endOfDirectory(handle)
+        zobraz_radia(handle, radia_sk)
 
-    # --- 3. KOMPLETNÝ ZOZNAM ČESKÝCH RÁDIÍ ---
+    # --- 3. ZOZNAM ČESKÝCH RÁDIÍ ---
     elif params.get('country') == 'cz':
         radia_cz = [
             {"nazov": "Rádio Kiss", "url": "https://ice.actve.net/fm-kiss-128", "logo": "https://www.kiss.cz/assets/img/logo.png"},
@@ -67,13 +63,22 @@ def main():
             {"nazov": "Frekvence 1", "url": "https://ice.actve.net/fm-frekvence1-128", "logo": "https://www.frekvence1.cz/img/logo-f1.png"},
             {"nazov": "Rádio Blaník", "url": "http://ice.abradio.cz/blanikfm128.mp3", "logo": "https://radioblanik.cz/wp-content/themes/blanik/img/logo.png"}
         ]
-        for radio in radia_cz:
-            li = xbmcgui.ListItem(label=radio["nazov"])
-            li.setArt({'icon': radio["logo"], 'thumb': radio["logo"]})
-            li.setInfo('audio', {'title': radio["nazov"]})
-            li.setProperty('IsPlayable', 'true')
-            xbmcplugin.addDirectoryItem(handle, radio["url"], li, False)
-        xbmcplugin.endOfDirectory(handle)
+        zobraz_radia(handle, radia_cz)
+
+# Univerzálna funkcia na zobrazenie zoznamu
+def zobraz_radia(handle, zoznam):
+    for radio in zoznam:
+        li = xbmcgui.ListItem(label=radio["nazov"])
+        li.setArt({
+            'thumb': radio["logo"],
+            'icon': radio["logo"],
+            'poster': radio["logo"],
+            'fanart': radio["logo"]
+        })
+        li.setInfo('audio', {'title': radio["nazov"]})
+        li.setProperty('IsPlayable', 'true')
+        xbmcplugin.addDirectoryItem(handle, radio["url"], li, False)
+    xbmcplugin.endOfDirectory(handle)
 
 if __name__ == '__main__':
     main()
