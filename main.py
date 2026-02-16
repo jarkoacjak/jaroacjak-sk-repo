@@ -1,35 +1,33 @@
 import sys
-import urllib.parse
 import xbmcgui
 import xbmcplugin
 
 def main():
-    # Zakladne nastavenie handle a parametrov
-    try:
-        handle = int(sys.argv[1])
-        arg_string = sys.argv[2][1:] if len(sys.argv[2]) > 1 else ""
-        params = dict(urllib.parse.parse_qsl(arg_string))
-    except:
-        return
+    handle = int(sys.argv[1])
+    # Zjednodusene citanie parametrov bez urllib
+    params = {}
+    if len(sys.argv[2]) > 1:
+        pairs = sys.argv[2][1:].split('&')
+        for pair in pairs:
+            split = pair.split('=')
+            if len(split) == 2:
+                params[split[0]] = split[1]
 
-    # --- 1. HLAVNE MENU ---
+    # --- HLAVNE MENU ---
     if not params:
         # Slovensko
         li = xbmcgui.ListItem(label="[B]🇸🇰 SLOVENSKÉ RÁDIÁ[/B]")
         li.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/200px-Flag_of_Slovakia.svg.png'})
-        url = sys.argv[0] + "?" + urllib.parse.urlencode({'country': 'sk'})
-        xbmcplugin.addDirectoryItem(handle, url, li, True)
+        xbmcplugin.addDirectoryItem(handle, sys.argv[0] + "?c=sk", li, True)
 
         # Cesko
         li = xbmcgui.ListItem(label="[B]🇨🇿 ČESKÉ RÁDIÁ[/B]")
         li.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/200px-Flag_of_the_Czech_Republic.svg.png'})
-        url = sys.argv[0] + "?" + urllib.parse.urlencode({'country': 'cz'})
-        xbmcplugin.addDirectoryItem(handle, url, li, True)
-
+        xbmcplugin.addDirectoryItem(handle, sys.argv[0] + "?c=cz", li, True)
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 2. SLOVENSKE RADIA ---
-    elif params.get('country') == 'sk':
+    # --- SLOVENSKE RADIA ---
+    elif params.get('c') == 'sk':
         radia = [
             {"n": "Rádio Viva", "u": "http://stream.sepia.sk:8000/viva320.mp3", "l": "https://myonlineradio.sk/public/uploads/radio_img/radio-viva/play_250_250.webp"},
             {"n": "Fresh Rádio", "u": "https://icecast2.radionet.sk/freshradio.sk", "l": "https://myonlineradio.sk/public/uploads/radio_img/fresh-radio/play_250_250.webp"},
@@ -52,15 +50,15 @@ def main():
             {"n": "Rádio Vlna", "u": "https://stream.radiovlna.sk/vlna-128.mp3", "l": "https://www.radiovlna.sk/static/images/logo.png"}
         ]
         for r in radia:
-            item = xbmcgui.ListItem(label=r["n"])
-            item.setArt({'icon': r["l"], 'thumb': r["l"]})
-            item.setInfo('audio', {'title': r["n"]})
-            item.setProperty('IsPlayable', 'true')
-            xbmcplugin.addDirectoryItem(handle, r["u"], item, False)
+            li = xbmcgui.ListItem(label=r["n"])
+            li.setArt({'thumb': r["l"], 'icon': r["l"]})
+            li.setInfo('audio', {'title': r["n"]})
+            li.setProperty('IsPlayable', 'true')
+            xbmcplugin.addDirectoryItem(handle, r["u"], li, False)
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 3. CESKE RADIA ---
-    elif params.get('country') == 'cz':
+    # --- CESKE RADIA ---
+    elif params.get('c') == 'cz':
         radia_cz = [
             {"n": "Rádio Kiss", "u": "https://ice.actve.net/fm-kiss-128", "l": "https://www.kiss.cz/assets/img/logo.png"},
             {"n": "Rádio Impuls", "u": "http://icecast5.play.cz/impuls128.mp3", "l": "https://www.impuls.cz/img/logo-impuls.png"},
@@ -69,13 +67,13 @@ def main():
             {"n": "Rádio Blaník", "u": "http://ice.abradio.cz/blanikfm128.mp3", "l": "https://radioblanik.cz/wp-content/themes/blanik/img/logo.png"}
         ]
         for r in radia_cz:
-            item = xbmcgui.ListItem(label=r["n"])
-            item.setArt({'icon': r["l"], 'thumb': r["l"]})
-            item.setInfo('audio', {'title': r["n"]})
-            item.setProperty('IsPlayable', 'true')
-            xbmcplugin.addDirectoryItem(handle, r["u"], item, False)
+            li = xbmcgui.ListItem(label=r["n"])
+            li.setArt({'thumb': r["l"], 'icon': r["l"]})
+            li.setInfo('audio', {'title': r["n"]})
+            li.setProperty('IsPlayable', 'true')
+            xbmcplugin.addDirectoryItem(handle, r["u"], li, False)
         xbmcplugin.endOfDirectory(handle)
 
 if __name__ == '__main__':
     main()
-
+    
