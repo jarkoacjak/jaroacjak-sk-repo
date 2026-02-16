@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.jaroacjak-radia" name="Jarkoacjak Rádia a TV" version="1.1.0" provider-name="Jarko">
+<addon id="plugin.video.jaroacjak-radia" name="Jarkoacjak Rádia" version="1.0.0" provider-name="Jarko">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>audio video</provides>
+        <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="sk">Moje rádiá a Free TV</summary>
-        <description lang="sk">Slovenské a české rádiá a televízie v jednej aplikácii od Jarka.</description>
+        <summary lang="sk">Moje slovenské a české rádiá</summary>
+        <description lang="sk">Jednoduchý prehrávač rádií pre Kodi od Jarka.</description>
         <platform>all</platform>
     </extension>
 </addon>
