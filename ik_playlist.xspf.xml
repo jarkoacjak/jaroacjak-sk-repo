@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" version="1" xmlns:vlc="http://www.videolan.org/vlc/playlist/ns/0/">
+  <title>Playlist</title>
+  <trackList>
+    <track>
+      <title>iTecko</title>
+      <location>rtp://@226.252.20.201:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>0</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>í-Qéčko</title>
+      <location>rtp://@226.252.20.202:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>1</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Národná rada SR</title>
+      <location>rtp://@233.10.47.5:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>2</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>JOJ HD</title>
+      <location>rtp://@233.10.47.7:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>3</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>JOJ Plus HD</title>
+      <location>rtp://@233.10.47.8:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>4</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>STV 1 HD</title>
+      <location>rtp://@233.10.47.31:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>5</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Markíza HD</title>
+      <location>rtp://@233.10.47.97:1234
+</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>6</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>WAU HD</title>
+      <location>rtp://@233.10.47.6:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>7</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Nova HD</title>
+      <location>rtp://@233.10.47.56:1234
+</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>8</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>CT 4 HD</title>
+      <location>rtp://@233.10.47.113:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>9</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Mystic Penguins</title>
+      <location>udp://@233.53.53.10:4484</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>10</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>RedIRIS-TV</title>
+      <location>udp://130.206.3.133@224.4.0.10:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>11</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>NRC Channel 2</title>
+      <location>rtp://@224.255.1.3:2821</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>12</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Slovensko</title>
+      <location>rtp://@233.10.47.41:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>13</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Devín</title>
+      <location>rtp://@233.10.47.42:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>14</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>FM</title>
+      <location>rtp://@233.10.47.43:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>15</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Viva</title>
+      <location>rtp://@233.10.47.44:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>16</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Hey</title>
+      <location>rtp://@233.10.47.74:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>17</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Rádio 7</title>
+      <location>rtp://@233.10.47.53:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>18</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Jemné Melódie</title>
+      <location>rtp://@233.10.47.79:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>19</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Lumen</title>
+      <location>rtp://@233.10.47.61:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>20</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Regina BA</title>
+      <location>rtp://@233.10.47.55:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>21</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Regina BB</title>
+      <location>rtp://@233.10.47.56:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>22</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Regina KE</title>
+      <location>rtp://@233.10.47.57:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>23</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Slovakia International</title>
+      <location>rtp://@233.10.47.62:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>24</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Patria</title>
+      <location>rtp://@233.10.47.58:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>25</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Čro1 Radiožurnál</title>
+      <location>rtp://@233.10.47.45:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>26</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Čro2 Praha</title>
+      <location>rtp://@233.10.47.46:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>27</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Čro3 Vltava</title>
+      <location>rtp://@233.10.47.47:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>28</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Čro4 Wave</title>
+      <location>rtp://@233.10.47.86:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>29</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Čro D-dur</title>
+      <location>rtp://@233.10.47.87:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>30</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Čro Rádio Česko</title>
+      <location>rtp://@233.10.47.88:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>31</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Čro Leonardo</title>
+      <location>rtp://@233.10.47.89:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>32</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Proglas</title>
+      <location>rtp://@233.10.47.48:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>33</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Region</title>
+      <location>rtp://@233.10.47.50:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>34</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Deutschlandradio Kultur</title>
+      <location>rtp://@233.10.47.51:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>35</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Deutschlandfunk</title>
+      <location>rtp://@233.10.47.52:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>36</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>RADIO X</title>
+      <location>http://158.193.82.41:8000/radiox_256.mp3</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>37</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>RADIO X Dance</title>
+      <location>http://158.193.82.41:8000/dance.mp3</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>38</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>RADIO X Alternative</title>
+      <location>http://158.193.82.41:8000/alternative.mp3</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>39</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>RADIO X Ludovky</title>
+      <location>http://158.193.82.41:8000/ludovky.mp3</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>40</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>RADIO X Chillout</title>
+      <location>http://158.193.82.41:8000/chillout.mp3</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>41</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>RADIO X D&amp;B</title>
+      <location>http://158.193.82.41:8000/dnb.mp3</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>42</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>RADIO X Metal</title>
+      <location>http://158.193.82.41:8000/metal.mp3</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>43</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>RADIO X Oldies</title>
+      <location>http://158.193.82.41:8000/oldies.mp3</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>44</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Rapeš</title>
+      <location>http://158.193.51.60:8000/live.mp3</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>45</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Metal expres radio</title>
+      <location>http://usa7-vn.mixstream.net/listen/8248.m3u</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>46</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>STV 2 HD</title>
+      <location>rtp://233.10.47.37:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>47</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Dajto HD</title>
+      <location>rtp://@233.10.47.38:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>48</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>CT 1 HD</title>
+      <location>rtp://@233.10.47.14:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>49</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>CT 2 HD</title>
+      <location>rtp://@233.10.47.114:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>50</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>CT 24 HD</title>
+      <location>rtp://@233.10.47.118:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>51</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>CT :D/ CT Art HD</title>
+      <location>rtp://@233.10.47.119:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>52</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Nova Cinema HD</title>
+      <location>rtp://@233.10.47.55:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>53</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Prima Cool HD</title>
+      <location>rtp://@233.10.47.117:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>54</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Fanda HD</title>
+      <location>rtp://233.10.47.115:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>55</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Eurosport HD</title>
+      <location>rtp://@233.10.47.64:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>56</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Eurosport 2 HD</title>
+      <location>rtp://@233.10.47.65:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>57</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>ARD HD</title>
+      <location>rtp://@233.10.47.94:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>58</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Arte HD</title>
+      <location>rtp://@233.10.47.96:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>59</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>SWR HD</title>
+      <location>rtp://@233.10.47.104:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>60</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>ZDF HD</title>
+      <location>rtp://@233.10.47.95:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>61</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>ZDFneo HD</title>
+      <location>rtp://@233.10.47.105:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>62</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>BR HD</title>
+      <location>rtp://@233.10.47.107:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>63</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>NDR HD</title>
+      <location>rtp://@233.10.47.108:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>64</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Phoenix HD</title>
+      <location>rtp://@233.10.47.109:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>65</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>STV 3 HD</title>
+      <location>rtp://@233.10.47.1:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>66</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Doma HD</title>
+      <location>rtp://@233.10.47.24:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>67</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>ČT Sport HD</title>
+      <location>rtp://@233.10.47.113:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>68</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Československo HD</title>
+      <location>rtp://@233.10.47.62:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>69</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Prima comedy central HD</title>
+      <location>rtp://@233.11.36.94:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>70</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>V1 HD</title>
+      <location>rtp://@233.11.36.104:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>71</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Nova action HD</title>
+      <location>rtp://@233.10.47.54:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>72</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Nova International HD</title>
+      <location>rtp://@233.10.47.61:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>73</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Nova Sport 1 HD</title>
+      <location>rtp://@233.10.47.60:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>74</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Prima HD</title>
+      <location>rtp://@233.10.47.57:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>75</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Prima Max HD</title>
+      <location>rtp://@233.10.47.59:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>76</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Prima Plus HD</title>
+      <location>rtp://@233.10.47.81:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>77</vlc:id>
+      </extension>
+    </track>
+    <track>
+      <title>Prima Zoom HD</title>
+      <location>rtp://@233.10.47.117:1234</location>
+      <extension application="http://www.videolan.org/vlc/playlist/0">
+        <vlc:id>78</vlc:id>
+      </extension>
+    </track>
+  </trackList>
+  <extension application="http://www.videolan.org/vlc/playlist/0">
+    <vlc:node title="Node 1">
+      <vlc:item tid="0"/>
+      <vlc:item tid="1"/>
+      <vlc:item tid="2"/>
+      <vlc:item tid="3"/>
+      <vlc:item tid="4"/>
+      <vlc:item tid="5"/>
+      <vlc:item tid="6"/>
+      <vlc:item tid="7"/>
+      <vlc:item tid="8"/>
+      <vlc:item tid="9"/>
+      <vlc:item tid="10"/>
+      <vlc:item tid="11"/>
+      <vlc:item tid="12"/>
+      <vlc:item tid="13"/>
+      <vlc:item tid="14"/>
+      <vlc:item tid="15"/>
+      <vlc:item tid="16"/>
+      <vlc:item tid="17"/>
+      <vlc:item tid="18"/>
+      <vlc:item tid="19"/>
+      <vlc:item tid="20"/>
+      <vlc:item tid="21"/>
+      <vlc:item tid="22"/>
+      <vlc:item tid="23"/>
+      <vlc:item tid="24"/>
+      <vlc:item tid="25"/>
+      <vlc:item tid="26"/>
+      <vlc:item tid="27"/>
+      <vlc:item tid="28"/>
+      <vlc:item tid="29"/>
+      <vlc:item tid="30"/>
+      <vlc:item tid="31"/>
+      <vlc:item tid="32"/>
+      <vlc:item tid="33"/>
+      <vlc:item tid="34"/>
+      <vlc:item tid="35"/>
+      <vlc:item tid="36"/>
+      <vlc:item tid="37"/>
+      <vlc:item tid="38"/>
+      <vlc:item tid="39"/>
+      <vlc:item tid="40"/>
+      <vlc:item tid="41"/>
+      <vlc:item tid="42"/>
+      <vlc:item tid="43"/>
+      <vlc:item tid="44"/>
+      <vlc:item tid="45"/>
+      <vlc:item tid="46"/>
+      <vlc:item tid="47"/>
+      <vlc:item tid="48"/>
+      <vlc:item tid="49"/>
+      <vlc:item tid="50"/>
+      <vlc:item tid="51"/>
+      <vlc:item tid="52"/>
+      <vlc:item tid="53"/>
+      <vlc:item tid="54"/>
+      <vlc:item tid="55"/>
+      <vlc:item tid="56"/>
+      <vlc:item tid="57"/>
+      <vlc:item tid="58"/>
+      <vlc:item tid="59"/>
+      <vlc:item tid="60"/>
+      <vlc:item tid="61"/>
+      <vlc:item tid="62"/>
+      <vlc:item tid="63"/>
+      <vlc:item tid="64"/>
+      <vlc:item tid="65"/>
+      <vlc:item tid="66"/>
+      <vlc:item tid="67"/>
+      <vlc:item tid="68"/>
+      <vlc:item tid="69"/>
+      <vlc:item tid="70"/>
+      <vlc:item tid="71"/>
+      <vlc:item tid="72"/>
+      <vlc:item tid="73"/>
+      <vlc:item tid="74"/>
+      <vlc:item tid="75"/>
+      <vlc:item tid="76"/>
+      <vlc:item tid="77"/>
+      <vlc:item tid="78"/>
+    </vlc:node>
+  </extension>
+</playlist>
