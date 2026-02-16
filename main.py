@@ -3,18 +3,18 @@ import urllib.parse
 import xbmcgui
 import xbmcplugin
 
-# Funkcia na vytváranie odkazov v menu
+# 1. Funkcia na generovanie URL
 def build_url(query):
     return sys.argv[0] + '?' + urllib.parse.urlencode(query)
 
 def main():
     handle = int(sys.argv[1])
     
-    # Bezpečné spracovanie parametrov, aby doplnok nespadol
+    # 2. Bezpečné načítanie parametrov
     param_string = sys.argv[2][1:]
     params = dict(urllib.parse.parse_qsl(param_string))
 
-    # --- 1. HLAVNÉ MENU ---
+    # --- HLAVNÉ MENU ---
     if not params:
         # Slovensko
         li = xbmcgui.ListItem(label="[B]🇸🇰 SLOVENSKÉ RÁDIÁ[/B]")
@@ -28,7 +28,7 @@ def main():
 
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ ---
+    # --- ZOZNAM SLOVENSKÝCH RÁDIÍ ---
     elif params.get('country') == 'sk':
         radia = [
             {"nazov": "Rádio Viva", "url": "http://stream.sepia.sk:8000/viva320.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-viva/play_250_250.webp"},
@@ -51,31 +51,31 @@ def main():
             {"nazov": "Fun Rádio", "url": "https://stream.funradio.sk:8000/fun128.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/fun-radio/play_250_250.webp"},
             {"nazov": "Rádio Vlna", "url": "https://stream.radiovlna.sk/vlna-128.mp3", "logo": "https://www.radiovlna.sk/static/images/logo.png"}
         ]
-        zobraz_stanice(handle, radia)
+        for radio in radia:
+            li = xbmcgui.ListItem(label=radio["nazov"])
+            li.setArt({'icon': radio["logo"], 'thumb': radio["logo"]})
+            li.setInfo('audio', {'title': radio["nazov"]})
+            li.setProperty('IsPlayable', 'true')
+            xbmcplugin.addDirectoryItem(handle, radio["url"], li, False)
+        xbmcplugin.endOfDirectory(handle)
 
-    # --- 3. ZOZNAM ČESKÝCH RÁDIÍ ---
+    # --- ZOZNAM ČESKÝCH RÁDIÍ ---
     elif params.get('country') == 'cz':
-        radia = [
+        radia_cz = [
             {"nazov": "Rádio Kiss", "url": "https://ice.actve.net/fm-kiss-128", "logo": "https://www.kiss.cz/assets/img/logo.png"},
             {"nazov": "Rádio Impuls", "url": "http://icecast5.play.cz/impuls128.mp3", "logo": "https://www.impuls.cz/img/logo-impuls.png"},
             {"nazov": "Evropa 2", "url": "https://ice.actve.net/fm-evropa2-128", "logo": "https://www.evropa2.cz/wp-content/themes/evropa2/assets/img/logo.png"},
             {"nazov": "Frekvence 1", "url": "https://ice.actve.net/fm-frekvence1-128", "logo": "https://www.frekvence1.cz/img/logo-f1.png"},
             {"nazov": "Rádio Blaník", "url": "http://ice.abradio.cz/blanikfm128.mp3", "logo": "https://radioblanik.cz/wp-content/themes/blanik/img/logo.png"}
         ]
-        zobraz_stanice(handle, radia)
-
-def zobraz_stanice(handle, zoznam):
-    for radio in zoznam:
-        li = xbmcgui.ListItem(label=radio["nazov"])
-        li.setArt({'thumb': radio["logo"], 'icon': radio["logo"]})
-        li.setProperty('IsPlayable', 'true')
-        # Nastavenie informácií pre hudobný prehrávač
-        info = li.getVideoInfoTag() if hasattr(li, "getVideoInfoTag") else None
-        if info: info.setTitle(radio["nazov"])
-        
-        xbmcplugin.addDirectoryItem(handle, radio["url"], li, False)
-    xbmcplugin.endOfDirectory(handle)
+        for radio in radia_cz:
+            li = xbmcgui.ListItem(label=radio["nazov"])
+            li.setArt({'icon': radio["logo"], 'thumb': radio["logo"]})
+            li.setInfo('audio', {'title': radio["nazov"]})
+            li.setProperty('IsPlayable', 'true')
+            xbmcplugin.addDirectoryItem(handle, radio["url"], li, False)
+        xbmcplugin.endOfDirectory(handle)
 
 if __name__ == '__main__':
     main()
-    
+        
