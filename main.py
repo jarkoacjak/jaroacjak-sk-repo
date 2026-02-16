@@ -27,7 +27,7 @@ def main():
 
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ (Pridaná Viva) ---
+    # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ (Všetky funkcie zachované) ---
     elif params.get('country') == 'sk':
         radia_sk = [
             {"nazov": "Rádio Viva", "url": "http://stream.sepia.sk:8000/viva320.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-viva/play_250_250.webp"},
