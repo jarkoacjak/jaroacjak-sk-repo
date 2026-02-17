@@ -37,6 +37,7 @@ def main():
             {"nazov": "Rádio Viva", "url": "http://stream.sepia.sk:8000/viva320.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-viva/play_250_250.webp"},
             {"nazov": "Fresh Rádio", "url": "https://icecast2.radionet.sk/freshradio.sk", "logo": "https://myonlineradio.sk/public/uploads/radio_img/fresh-radio/play_250_250.webp"},
             {"nazov": "Rádio Rock", "url": "https://stream.bauermedia.sk/rock-hi.mp3", "logo": "https://radiorock.sk/intro-v2.png"},
+            {"nazov": "Fun Rádio CZ - SK", "url": "http://stream.funradio.sk:8000/cs128.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/fun-cz-sk.png"},
             {"nazov": "Fun Rádio 80s - 90s", "url": "http://stream.funradio.sk:8000/80-90-128.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/fun-80-90-roky.png"},
             {"nazov": "BB FM", "url": "http://stream.bbfm.sk:8000/bbfm128.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/bb-fm-radio/play_250_250.webp"},
             {"nazov": "Rádio Regina - Západ", "url": "https://icecast.stv.livebox.sk/regina-ba_128.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/regina-zapad.png"},
@@ -94,4 +95,4 @@ def zobraz_radia(handle, zoznam):
 
 if __name__ == '__main__':
     main()
-
+    
