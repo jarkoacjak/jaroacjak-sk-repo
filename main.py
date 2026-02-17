@@ -8,17 +8,15 @@ def build_url(query):
     return sys.argv[0] + '?' + urllib.parse.urlencode(query)
 
 def main():
-    # Ziskanie handle - ak zlyha, skript nepokracuje
+    # Zakladne nastavenie handle a parametrov
     try:
         handle = int(sys.argv[1])
+        arg_string = sys.argv[2][1:] if len(sys.argv[2]) > 1 else ""
+        params = dict(urllib.parse.parse_qsl(arg_string))
     except:
         return
 
-    # Spracovanie parametrov
-    arg_string = sys.argv[2][1:] if len(sys.argv[2]) > 1 else ""
-    params = dict(urllib.parse.parse_qsl(arg_string))
-
-    # --- 1. HLAVNÉ MENU ---
+    # --- 1. HLAVNÉ MENU (Výber krajiny) ---
     if not params:
         # Slovensko
         url_sk = build_url({'country': 'sk'})
@@ -40,6 +38,7 @@ def main():
             {"nazov": "Rádio Viva", "url": "http://stream.sepia.sk:8000/viva320.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-viva/play_250_250.webp"},
             {"nazov": "Fresh Rádio", "url": "https://icecast2.radionet.sk/freshradio.sk", "logo": "https://myonlineradio.sk/public/uploads/radio_img/fresh-radio/play_250_250.webp"},
             {"nazov": "Rádio Rock", "url": "https://stream.bauermedia.sk/rock-hi.mp3", "logo": "https://radiorock.sk/intro-v2.png"},
+            {"nazov": "Rádio Devín", "url": "https://icecast.stv.livebox.sk/devin_128.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/devin.png"},
             {"nazov": "Europa 2", "url": "https://stream.bauermedia.sk/europa2-hi.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/europa2.png"},
             {"nazov": "Dobré Rádio", "url": "https://stream.dobreradio.sk/dobreradio.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/dobre.png"},
             {"nazov": "Rádio InfoVojna", "url": "https://stream1.infovojna.com:8000/live", "logo": "https://topradio.sk/_next/image?url=%2Fimages%2Finfovojna.jpg&w=640&q=75"},
@@ -87,4 +86,4 @@ def zobraz_radia(handle, zoznam):
 
 if __name__ == '__main__':
     main()
-
+            
