@@ -54,7 +54,7 @@ def main():
             {"nazov": "Rádio Melody", "url": "https://stream.bauermedia.sk/melody-hi.mp3", "logo": "https://www.radiomelody.sk/cover.png?f=raw"},
             {"nazov": "Rádio Beta", "url": "http://109.71.67.102:8000/beta_live_high.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-beta/play_250_250.webp"},
             {"nazov": "Fun Rádio", "url": "https://stream.funradio.sk:8000/fun128.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/fun-radio/play_250_250.webp"},
-            {"nazov": "Rádio Vlna", "url": "https://stream.radiovlna.sk/vlna-128.mp3", "logo": "https://www.radiovlna.sk/static/images/logo.png"}
+            {"nazov": "Rádio Vlna", "url": "http://stream.radiovlna.sk/vlna-hi.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-vlna/play_250_250.webp"}
         ]
         zobraz_radia(handle, radia_sk)
 
@@ -79,7 +79,6 @@ def zobraz_radia(handle, zoznam):
             'poster': radio["logo"],
             'fanart': radio["logo"]
         })
-        # Nastavenie informácií, aby Kodi vedelo, čo hrá
         li.setInfo('audio', {
             'title': radio["nazov"],
             'mediatype': 'music',
@@ -91,4 +90,4 @@ def zobraz_radia(handle, zoznam):
 
 if __name__ == '__main__':
     main()
-
+        
