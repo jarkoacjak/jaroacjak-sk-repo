@@ -8,7 +8,6 @@ def build_url(query):
     return sys.argv[0] + '?' + urllib.parse.urlencode(query)
 
 def main():
-    # Zakladne nastavenie handle a parametrov
     try:
         handle = int(sys.argv[1])
         arg_string = sys.argv[2][1:] if len(sys.argv[2]) > 1 else ""
@@ -16,7 +15,7 @@ def main():
     except:
         return
 
-    # --- 1. HLAVNÉ MENU (Výber krajiny) ---
+    # --- 1. HLAVNÉ MENU ---
     if not params:
         # Slovensko
         url_sk = build_url({'country': 'sk'})
@@ -79,11 +78,17 @@ def zobraz_radia(handle, zoznam):
             'poster': radio["logo"],
             'fanart': radio["logo"]
         })
-        li.setInfo('audio', {'title': radio["nazov"]})
+        # TU JE ZMENA: Pridanie metadat pre audio stream
+        li.setInfo('audio', {
+            'title': radio["nazov"],
+            'mediatype': 'music',
+            'comment': 'Live Stream'
+        })
+        # Oznámenie Kodi, že ide o streamovateľný obsah
         li.setProperty('IsPlayable', 'true')
         xbmcplugin.addDirectoryItem(handle, radio["url"], li, False)
     xbmcplugin.endOfDirectory(handle)
 
 if __name__ == '__main__':
     main()
-            
+    
