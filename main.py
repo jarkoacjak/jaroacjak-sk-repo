@@ -37,6 +37,7 @@ def main():
             {"nazov": "Rádio Viva", "url": "http://stream.sepia.sk:8000/viva320.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-viva/play_250_250.webp"},
             {"nazov": "Fresh Rádio", "url": "https://icecast2.radionet.sk/freshradio.sk", "logo": "https://myonlineradio.sk/public/uploads/radio_img/fresh-radio/play_250_250.webp"},
             {"nazov": "Rádio Rock", "url": "https://stream.bauermedia.sk/rock-hi.mp3", "logo": "https://radiorock.sk/intro-v2.png"},
+            {"nazov": "Fun Rádio Chill", "url": "https://stream.funradio.sk/chill128.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/fun-chill.png"},
             {"nazov": "Fun Rádio Dance", "url": "http://stream.funradio.sk:8000/dance128.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/fun-dance.png"},
             {"nazov": "Fun Rádio CZ - SK", "url": "http://stream.funradio.sk:8000/cs128.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/fun-cz-sk.png"},
             {"nazov": "Fun Rádio 80s - 90s", "url": "http://stream.funradio.sk:8000/80-90-128.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/fun-80-90-roky.png"},
@@ -96,4 +97,4 @@ def zobraz_radia(handle, zoznam):
 
 if __name__ == '__main__':
     main()
-    
+
