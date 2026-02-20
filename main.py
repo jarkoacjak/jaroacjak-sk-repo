@@ -106,4 +106,4 @@ def zobraz_radia(handle, zoznam):
 
 if __name__ == '__main__':
     main()
-             
+
