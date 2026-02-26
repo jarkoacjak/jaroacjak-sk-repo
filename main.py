@@ -2,6 +2,10 @@ import sys
 import urllib.parse
 import xbmcgui
 import xbmcplugin
+import sys
+import urllib.parse
+import xbmcgui
+import xbmcplugin
 
 # Funkcia na generovanie URL adries pre menu
 def build_url(query):
@@ -34,6 +38,7 @@ def main():
     # --- 2. ZOZNAM SLOVENSKÝCH RÁDIÍ ---
     elif params.get('country') == 'sk':
         radia_sk = [
+            {"nazov": "PARTY RADIO", "url": "https://mpc1.mediacp.eu/stream/partyradio", "logo": "http://files.exoweb.eu/13/40/13404079-0cdd-42be-88cd-e832e3e5542c.jpeg"},
             {"nazov": "Rádio Viva", "url": "http://stream.sepia.sk:8000/viva320.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-viva/play_250_250.webp"},
             {"nazov": "Fresh Rádio", "url": "https://icecast2.radionet.sk/freshradio.sk", "logo": "https://myonlineradio.sk/public/uploads/radio_img/fresh-radio/play_250_250.webp"},
             {"nazov": "Rádio Rock", "url": "https://stream.bauermedia.sk/rock-hi.mp3", "logo": "https://radiorock.sk/intro-v2.png"},
@@ -108,3 +113,4 @@ def zobraz_radia(handle, zoznam):
 
 if __name__ == '__main__':
     main()
+    
