@@ -37,6 +37,7 @@ def main():
             {"nazov": "Rádio Viva", "url": "http://stream.sepia.sk:8000/viva320.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-viva/play_250_250.webp"},
             {"nazov": "Fresh Rádio", "url": "https://icecast2.radionet.sk/freshradio.sk", "logo": "https://myonlineradio.sk/public/uploads/radio_img/fresh-radio/play_250_250.webp"},
             {"nazov": "Rádio Rock", "url": "https://stream.bauermedia.sk/rock-hi.mp3", "logo": "https://radiorock.sk/intro-v2.png"},
+            {"nazov": "Rádio Maria Slovakia", "url": "https://dreamsiteradiocp5.com/proxy/radiomariaslomp3?mp=/stream.mp3", "logo": "https://myonlineradio.sk/public/uploads/radio_img/radio-maria-slovensko/play_250_250.webp"},
             {"nazov": "Rádio Lumen", "url": "https://audio.lumen.sk/live128.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/lumen.png"},
             {"nazov": "Na vlne Novohradu", "url": "https://radioserver.online/proxy/navlnenovohradu/novohradHQ.mp3", "logo": "https://www.radia.sk/_radia/loga/app/na-vlne-novohradu.webp?v=2"},
             {"nazov": "Na vlne Liptova", "url": "http://radioserver.online:8009/hq.mp3", "logo": "https://www.radia.sk/_radia/loga/coverflow/na-vlne-liptova.png"},
@@ -107,4 +108,3 @@ def zobraz_radia(handle, zoznam):
 
 if __name__ == '__main__':
     main()
-    
