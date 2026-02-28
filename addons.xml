@@ -14,4 +14,18 @@
             <platform>all</platform>
         </extension>
     </addon>
+
+    <addon id="plugin.audio.pocuvamradia" name="Počúvam Rádiá" version="1.0.0" provider-name="Jarko">
+        <requires>
+            <import addon="xbmc.python" version="3.0.0"/>
+        </requires>
+        <extension point="xbmc.python.pluginsource" library="main.py">
+            <provides>audio</provides>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>Slovenské a české rádiá</summary>
+            <description>Aplikácia na streamovanie tvojich obľúbených rádií.</description>
+            <platform>all</platform>
+        </extension>
+    </addon>
 </addons>
