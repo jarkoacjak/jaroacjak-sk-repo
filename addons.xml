@@ -9,7 +9,7 @@
             </dir>
         </extension>
         <extension point="xbmc.addon.metadata">
-            <summary>Moje Kodi aplikácie</summary>
+            <summary>Moje aplikácie Kodi</summary>
             <description>Repozitár pre slovenské doplnky Kodi</description>
             <platform>all</platform>
         </extension>
