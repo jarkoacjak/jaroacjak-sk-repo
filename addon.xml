@@ -1,14 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.jaroacjak-radia" name="Počuvaj Rádia" version="1.0.1" provider-name="Jarko">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="sk">Moje slovenské a české rádiá</summary>
-        <description lang="sk">Jednoduchý prehrávač rádií pre Kodi od Jarka.</description>
-        <platform>all</platform>
-    </extension>
-</addon>
+<extension point="xbmc.addon.repository" name="Jarko Repository">
+    <dir>
+        <info compressed="false">https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml</info>
+        <checksum>https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml.md5</checksum>
+        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/zips/</datadir>
+    </dir>
+</extension>
