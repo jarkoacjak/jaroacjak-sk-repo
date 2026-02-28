@@ -23,8 +23,8 @@
             <provides>audio</provides>
         </extension>
         <extension point="xbmc.addon.metadata">
-            <summary>Slovenské a české rádiá</summary>
-            <description>Aplikácia na streamovanie tvojich obľúbených rádií.</description>
+            <summary>Moje rádio streamy</summary>
+            <description>Aplikácia na počúvanie rádií.</description>
             <platform>all</platform>
         </extension>
     </addon>
