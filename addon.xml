@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.jarko" name="Jarkov Program" version="1.0.0" provider-name="Jarko">
-  <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="main.py">
-    <provides>executable</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary>Môj prvý program</summary>
-    <description>Tento program som vytvoril ja.</description>
-    <platform>all</platform>
-  </extension>
+<addon id="plugin.audio.pocuvamradia" name="Počúvam Rádiá" version="1.0.0" provider-name="Jarko">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>audio</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Slovenské a České rádiá</summary>
+        <description>Doplnok na počúvanie rádií s logami staníc, ktorý sme spolu vytvorili.</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
 </addon>
