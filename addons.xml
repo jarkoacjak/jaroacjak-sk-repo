@@ -9,23 +9,27 @@
             </dir>
         </extension>
         <extension point="xbmc.addon.metadata">
-            <summary>Moje aplikácie Kodi</summary>
-            <description>Repozitár pre slovenské doplnky Kodi</description>
+            <summary>Jarkov repozitár</summary>
+            <description>Slovenské rádiá a TV stanice</description>
             <platform>all</platform>
         </extension>
     </addon>
 
     <addon id="plugin.audio.pocuvamradia" name="Počúvam Rádiá" version="1.0.0" provider-name="Jarko">
-        <requires>
-            <import addon="xbmc.python" version="3.0.0"/>
-        </requires>
-        <extension point="xbmc.python.pluginsource" library="main.py">
-            <provides>audio</provides>
-        </extension>
+        <requires><import addon="xbmc.python" version="3.0.0"/></requires>
+        <extension point="xbmc.python.pluginsource" library="main.py"><provides>audio</provides></extension>
         <extension point="xbmc.addon.metadata">
             <summary>Slovenské a České rádiá</summary>
-            <description>Doplnok na počúvanie rádií s logami a krajinami.</description>
-            <platform>all</platform>
+            <description>Nájdeš v sekcii Doplnky hudby</description>
+        </extension>
+    </addon>
+
+    <addon id="plugin.video.tvfree" name="TV Free" version="1.0.0" provider-name="Jarko">
+        <requires><import addon="xbmc.python" version="3.0.0"/></requires>
+        <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>Slovenské a České TV</summary>
+            <description>Nájdeš v sekcii Doplnky videí</description>
         </extension>
     </addon>
 </addons>
