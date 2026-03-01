@@ -9,8 +9,8 @@
             </dir>
         </extension>
         <extension point="xbmc.addon.metadata">
-            <summary>Jarkove rádio a TV</summary>
-            <description>Moje vlastné doplnky pre Kodi.</description>
+            <summary>Jarkove rádio a TV doplnky</summary>
+            <description>Klikni sem a nájdeš sekcie Doplnky hudby a Doplnky videí.</description>
             <platform>all</platform>
         </extension>
     </addon>
@@ -18,12 +18,12 @@
     <addon id="plugin.audio.pocuvamradia" name="Počúvam Rádiá" version="1.0.0" provider-name="Jarko">
         <requires><import addon="xbmc.python" version="3.0.0"/></requires>
         <extension point="xbmc.python.pluginsource" library="main.py"><provides>audio</provides></extension>
-        <extension point="xbmc.addon.metadata"><summary>Rádiá</summary><description>Hudobný doplnok.</description></extension>
+        <extension point="xbmc.addon.metadata"><summary>Rádiá</summary><description>Tento doplnok sa zobrazí v Doplnky hudby.</description></extension>
     </addon>
 
     <addon id="plugin.video.tvfree" name="TV Free" version="1.0.0" provider-name="Jarko">
         <requires><import addon="xbmc.python" version="3.0.0"/></requires>
         <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
-        <extension point="xbmc.addon.metadata"><summary>TV Stanice</summary><description>Video doplnok.</description></extension>
+        <extension point="xbmc.addon.metadata"><summary>TV Stanice</summary><description>Tento doplnok sa zobrazí v Doplnky videí.</description></extension>
     </addon>
 </addons>
