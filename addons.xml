@@ -10,22 +10,26 @@
         </extension>
         <extension point="xbmc.addon.metadata">
             <summary>Moje aplikácie Kodi</summary>
-            <description>Repozitár pre slovenské doplnky Kodi</description>
+            <description>Repozitár pre slovenské doplnky</description>
             <platform>all</platform>
         </extension>
     </addon>
 
     <addon id="plugin.audio.pocuvamradia" name="Počúvam Rádiá" version="1.0.0" provider-name="Jarko">
-        <requires>
-            <import addon="xbmc.python" version="3.0.0"/>
-        </requires>
-        <extension point="xbmc.python.pluginsource" library="main.py">
-            <provides>audio</provides>
-        </extension>
+        <requires><import addon="xbmc.python" version="3.0.0"/></requires>
+        <extension point="xbmc.python.pluginsource" library="main.py"><provides>audio</provides></extension>
         <extension point="xbmc.addon.metadata">
-            <summary>Moje rádio streamy</summary>
-            <description>Aplikácia na počúvanie rádií.</description>
-            <platform>all</platform>
+            <summary>Slovenské rádiá</summary>
+            <description>Tento program nájdeš v kategórii Hudba.</description>
+        </extension>
+    </addon>
+
+    <addon id="plugin.video.jarkovidea" name="Jarkove Videá" version="1.0.0" provider-name="Jarko">
+        <requires><import addon="xbmc.python" version="3.0.0"/></requires>
+        <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>Moje video streamy</summary>
+            <description>Tento program nájdeš v kategórii Videá.</description>
         </extension>
     </addon>
 </addons>
