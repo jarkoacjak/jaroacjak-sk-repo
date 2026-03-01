@@ -24,7 +24,7 @@
         </extension>
         <extension point="xbmc.addon.metadata">
             <summary>Slovenské a České rádiá</summary>
-            <description>Doplnok na počúvanie rádií.</description>
+            <description>Doplnok na počúvanie rádií s logami staníc.</description>
             <platform>all</platform>
         </extension>
     </addon>
