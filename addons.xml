@@ -1,3 +1,45 @@
-<info compressed="false">https://jarkoacjak.github.io/jarkoacjak-sk-repo/addons.xml</info>
-<checksum>https://jarkoacjak.github.io/jarkoacjak-sk-repo/addons.xml.md5</checksum>
-<datadir zip="true">https://jarkoacjak.github.io/jarkoacjak-sk-repo/zips/</datadir>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+
+<addon id="repository.jarkoacjak" name="Jarkoacjak SK Repo" version="1.0.0" provider-name="Jarko">
+    <extension point="xbmc.addon.repository" name="Jarkoacjak SK Repo">
+        <dir>
+            <info compressed="false">https://jarkoacjak.github.io/jarkoacjak-sk-repo/addons.xml</info>
+            <checksum>https://jarkoacjak.github.io/jarkoacjak-sk-repo/addons.xml.md5</checksum>
+            <datadir zip="true">https://jarkoacjak.github.io/jarkoacjak-sk-repo/zips/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Jarkov repozitár pre Rádio a TV</summary>
+        <description>Tento repozitár obsahuje doplnky pre slovenské rádiá a televízie.</description>
+        <platform>all</platform>
+    </extension>
+</addon>
+
+<addon id="plugin.audio.pocuvamradia" name="Počúvam Rádiá" version="1.0.0" provider-name="Jarko">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>audio</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Slovenské a České rádiá online</summary>
+        <platform>all</platform>
+    </extension>
+</addon>
+
+<addon id="plugin.video.tvfree" name="TV Free" version="1.0.0" provider-name="Jarko">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Slovenské a České televízie</summary>
+        <platform>all</platform>
+    </extension>
+</addon>
+
+</addons>
