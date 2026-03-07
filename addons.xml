@@ -28,7 +28,7 @@
         <requires><import addon="xbmc.python" version="3.0.0"/></requires>
         <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
         <extension point="xbmc.addon.metadata">
-            <summary>TV Stanice</summary>
+            <summary>Slovenské a České TV</summary>
             <description>Nájdeš v kategórii Doplnky videí.</description>
         </extension>
     </addon>
