@@ -2,6 +2,7 @@ import sys
 import urllib.parse
 import xbmcgui
 import xbmcplugin
+from datetime import datetime, timedelta
 
 def build_url(query):
     return sys.argv[0] + '?' + urllib.parse.urlencode(query)
@@ -14,37 +15,67 @@ def main():
     except:
         return
 
-    # Spoločné hlavičky
     joj_headers = "|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36&Referer=https://videoportal.joj.sk/"
     common_headers = "|User-Agent=Mozilla/5.0"
 
     # --- 1. HLAVNÉ MENU ---
     if not params:
-        url_live = build_url({'mode': 'select_country_live'})
-        li_live = xbmcgui.ListItem(label="[B]📺 ŽIVÉ VYSIELANIE (s EPG)[/B]")
-        xbmcplugin.addDirectoryItem(handle, url_live, li_live, True)
-
-        url_archive = build_url({'mode': 'list_archive_channels'})
-        li_archive = xbmcgui.ListItem(label="[B]📂 ARCHÍV (Pripravuje sa)[/B]")
-        xbmcplugin.addDirectoryItem(handle, url_archive, li_archive, True)
-
+        for mode, label in [('select_country_live', "📺 ŽIVÉ VYSIELANIE / PROGRAM"), ('select_country_archive', "📂 ARCHÍV (7 DNÍ)")]:
+            url = build_url({'mode': mode})
+            li = xbmcgui.ListItem(label=f"[B]{label}[/B]")
+            xbmcplugin.addDirectoryItem(handle, url, li, True)
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 2. VÝBER KRAJINY PRE ŽIVÉ TV ---
-    elif params.get('mode') == 'select_country_live':
-        url_sk = build_url({'mode': 'list_live_sk'})
+    # --- 2. VÝBER KRAJINY (ŽIVÉ AJ ARCHÍV) ---
+    elif params.get('mode') in ['select_country_live', 'select_country_archive']:
+        current_mode = params.get('mode')
+        dest_mode = 'list_live_sk' if current_mode == 'select_country_live' else 'list_archive_sk'
+        
+        # Slovensko
+        url_sk = build_url({'mode': dest_mode})
         li_sk = xbmcgui.ListItem(label="[B]🇸🇰 SLOVENSKÉ TELEVÍZIE[/B]")
         li_sk.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/200px-Flag_of_Slovakia.svg.png'})
         xbmcplugin.addDirectoryItem(handle, url_sk, li_sk, True)
 
-        url_cz = build_url({'mode': 'msg_archive'}) 
+        # Česko (Zatiaľ oznam)
+        url_cz = build_url({'mode': 'msg_pripravujeme'})
         li_cz = xbmcgui.ListItem(label="[B]🇨🇿 ČESKÉ TELEVÍZIE[/B]")
         li_cz.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/200px-Flag_of_the_Czech_Republic.svg.png'})
         xbmcplugin.addDirectoryItem(handle, url_cz, li_cz, True)
-
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 3. ŽIVÉ TV S PRÍPRAVOU PRE EPG ---
+    # --- 3. ZOZNAM STANÍC PRE ARCHÍV ---
+    elif params.get('mode') == 'list_archive_sk':
+        # Zatiaľ len JOJka, postupne pridáme ďalšie
+        url = build_url({'mode': 'archive_days', 'channel': 'TV JOJ'})
+        li = xbmcgui.ListItem(label="TV JOJ (Archív)")
+        li.setArt({'icon': 'https://yt3.googleusercontent.com/8rPXBoj2l1nhd9C-DCXF-s3tx0i_36GJzJcxeMyYvyPpPNakQsyc5DYc5d_QLDeI74ILkmFSJQ=s900-c-k-c0x00ffffff-no-rj'})
+        xbmcplugin.addDirectoryItem(handle, url, li, True)
+        xbmcplugin.endOfDirectory(handle)
+
+    # --- 4. VÝBER DŇA (7 DNÍ) ---
+    elif params.get('mode') == 'archive_days':
+        channel = params.get('channel')
+        for i in range(7):
+            date_obj = datetime.now() - timedelta(days=i)
+            date_str = date_obj.strftime('%d.%m.%Y')
+            day_name = ["Pondelok", "Utorok", "Streda", "Štvrtok", "Piatok", "Sobota", "Nedeľa"][date_obj.weekday()]
+            
+            label = f"{day_name} ({date_str})"
+            if i == 0: label = f"[COLOR yellow]Dnes - {label}[/COLOR]"
+            
+            url = build_url({'mode': 'archive_list_programs', 'channel': channel, 'date': date_str})
+            li = xbmcgui.ListItem(label=label)
+            xbmcplugin.addDirectoryItem(handle, url, li, True)
+        xbmcplugin.endOfDirectory(handle)
+
+    # --- 5. ZOZNAM PROGRAMOV (UKÁŽKA) ---
+    elif params.get('mode') == 'archive_list_programs':
+        # Tu sa neskôr napojí reálne získavanie relácií z webu
+        xbmcgui.Dialog().ok("Archív", f"Tu bude zoznam relácií pre {params.get('channel')} zo dňa {params.get('date')}")
+        xbmcplugin.endOfDirectory(handle, False)
+
+    # --- ŠTANDARDNÝ ZOZNAM ŽIVÝCH TV ---
     elif params.get('mode') == 'list_live_sk':
         tv_stanice = [
             {"nazov": "TV JOJ", "url": "https://live.cdn.joj.sk/live/andromeda/joj-1080.m3u8" + joj_headers, "logo": "https://yt3.googleusercontent.com/8rPXBoj2l1nhd9C-DCXF-s3tx0i_36GJzJcxeMyYvyPpPNakQsyc5DYc5d_QLDeI74ILkmFSJQ=s900-c-k-c0x00ffffff-no-rj", "epg_id": "JOJ.sk"},
@@ -60,34 +91,17 @@ def main():
             {"nazov": "CS Mystery", "url": "https://live.cdn.joj.sk/live/andromeda/cs_mystery-1080.m3u8" + joj_headers, "logo": "https://img.joj.sk/90e3d390-9f4f-48cb-9773-98a0a119dfa8", "epg_id": "CSMYSTERY.sk"},
             {"nazov": "Senzi TV", "url": "https://lb.streaming.sk/senzi/stream/playlist.m3u8" + common_headers, "logo": "http://googleusercontent.com/profile/picture/3", "epg_id": "SENZI.sk"}
         ]
-        
         for tv in tv_stanice:
             li = xbmcgui.ListItem(label=tv["nazov"])
             li.setArt({'thumb': tv["logo"], 'icon': tv["logo"]})
-            # Nastavenie EPG ID pre PVR klientov
-            li.setInfo('video', {'title': tv["nazov"], 'plot': 'Načítavam program...'})
+            li.setInfo('video', {'title': tv["nazov"]})
             li.setProperty('epg_id', tv["epg_id"])
             li.setProperty('IsPlayable', 'true')
             xbmcplugin.addDirectoryItem(handle, tv["url"], li, False)
-            
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 4. ZOZNAM STANÍC PRE ARCHÍV (PRÍPRAVA) ---
-    elif params.get('mode') == 'list_archive_channels':
-        # Tu budeme postupne pridávať logiku pre získavanie dní a relácií
-        xbmcgui.Dialog().notification("Archív", "Pracujeme na sprístupnení relácií", xbmcgui.NOTIFICATION_INFO, 5000)
-        
-        # Zatiaľ zobrazíme zoznam staníc, ktoré budú mať archív ako prvé
-        channels = ["TV JOJ", "JOJ Plus", "JOJ Krimi"]
-        for chan in channels:
-            url = build_url({'mode': 'archive_days', 'channel': chan})
-            li = xbmcgui.ListItem(label=f"Archív {chan}")
-            xbmcplugin.addDirectoryItem(handle, url, li, True)
-            
-        xbmcplugin.endOfDirectory(handle)
-
-    elif params.get('mode') == 'msg_archive':
-        xbmcgui.Dialog().ok("Informácia", "Táto sekcia sa pripravuje")
+    elif params.get('mode') == 'msg_pripravujeme':
+        xbmcgui.Dialog().ok("Informácia", "Túto sekciu pripravujeme")
         xbmcplugin.endOfDirectory(handle, False)
 
 if __name__ == '__main__':
