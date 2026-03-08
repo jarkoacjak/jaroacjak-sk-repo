@@ -42,7 +42,7 @@ def main():
 
     # --- 3. ZOZNAM SLOVENSKÝCH TV ---
     elif params.get('mode') == 'list_live_sk':
-        # Pridaný silnejší User-Agent a Referer pre oklamanie servera
+        # Overené hlavičky pre stabilitu JOJ streamov
         headers = "|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36&Referer=https://videoportal.joj.sk/"
         
         tv_stanice = [
@@ -55,6 +55,11 @@ def main():
                 "nazov": "JOJ Krimi", 
                 "url": "https://live.cdn.joj.sk/live/andromeda/wau-1080.m3u8" + headers, 
                 "logo": "https://www.interez.sk/wp-content/uploads/2026/02/krimi-joj-wau-televizia.jpg"
+            },
+            {
+                "nazov": "JOJ Šport", 
+                "url": "https://live.cdn.joj.sk/live/andromeda/joj_sport-1080.m3u8" + headers, 
+                "logo": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100072427963738"
             }
         ]
         
