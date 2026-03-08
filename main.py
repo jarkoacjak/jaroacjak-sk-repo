@@ -80,6 +80,11 @@ def main():
                 "nazov": "JOJ Cinema", 
                 "url": "https://live.cdn.joj.sk/live/andromeda/cinema-1080.m3u8" + headers, 
                 "logo": "http://googleusercontent.com/profile/picture/2"
+            },
+            {
+                "nazov": "JOJ Family", 
+                "url": "https://live.cdn.joj.sk/live/andromeda/family-1080.m3u8" + headers, 
+                "logo": "https://staticeu.sweet.tv/images/cache/channel_icons/BDUQMIAK/873-joj-family-hd.png"
             }
         ]
         
