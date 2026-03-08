@@ -35,24 +35,28 @@ def main():
         xbmcplugin.addDirectoryItem(handle, url_sk, li_sk, True)
 
         # Česko
-        url_cz = build_url({'mode': 'msg_archive'}) # Zatiaľ oznam, kým nemáš CZ streamy
+        url_cz = build_url({'mode': 'msg_archive'}) 
         li_cz = xbmcgui.ListItem(label="[B]🇨🇿 ČESKÉ TELEVÍZIE[/B]")
         li_cz.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/200px-Flag_of_the_Czech_Republic.svg.png'})
         xbmcplugin.addDirectoryItem(handle, url_cz, li_cz, True)
 
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 3. ZOZNAM SLOVENSKÝCH TV (Opravená JOJka) ---
+    # --- 3. ZOZNAM SLOVENSKÝCH TV (Iba TV JOJ) ---
     elif params.get('mode') == 'list_live_sk':
-        # Tvoj nový stream a logo
+        # Tvoj opravený stream a logo
         joj_url = "https://live.cdn.joj.sk/live/andromeda/joj-1080.m3u8"
+        # Priamy odkaz na logo z tvojho vyhľadávania
         joj_logo = "https://yt3.googleusercontent.com/8rPXBoj2l1nhd9C-DCXF-s3tx0i_36GJzJcxeMyYvyPpPNakQsyc5DYc5d_QLDeI74ILkmFSJQ=s900-c-k-c0x00ffffff-no-rj"
         
-        li = xbmcgui.ListItem(label="TV JOJ (1080p)")
-        li.setArt({'thumb': joj_logo, 'icon': joj_logo})
+        li = xbmcgui.ListItem(label="TV JOJ")
+        li.setArt({'thumb': joj_logo, 'icon': joj_logo, 'fanart': joj_logo})
+        
+        # Nastavenie videa
         li.setInfo('video', {'title': 'TV JOJ', 'mediatype': 'video'})
         li.setProperty('IsPlayable', 'true')
         
+        # Pridanie položky (isFolder=False znamená, že sa hneď spustí prehrávanie)
         xbmcplugin.addDirectoryItem(handle, joj_url, li, False)
         xbmcplugin.endOfDirectory(handle)
 
