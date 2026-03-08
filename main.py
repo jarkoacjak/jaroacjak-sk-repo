@@ -42,25 +42,26 @@ def main():
 
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 3. ZOZNAM SLOVENSKÝCH TV (Iba TV JOJ) ---
+    # --- 3. ZOZNAM SLOVENSKÝCH TV (Opravená JOJka) ---
     elif params.get('mode') == 'list_live_sk':
-        # Tvoj opravený stream a logo
-        joj_url = "https://live.cdn.joj.sk/live/andromeda/joj-1080.m3u8"
-        # Priamy odkaz na logo z tvojho vyhľadávania
+        # Stream s pridaným User-Agentom proti chybe prehrávania
+        joj_url = "https://live.cdn.joj.sk/live/andromeda/joj-1080.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+        
+        # Logo, ktoré si poslal
         joj_logo = "https://yt3.googleusercontent.com/8rPXBoj2l1nhd9C-DCXF-s3tx0i_36GJzJcxeMyYvyPpPNakQsyc5DYc5d_QLDeI74ILkmFSJQ=s900-c-k-c0x00ffffff-no-rj"
         
         li = xbmcgui.ListItem(label="TV JOJ")
         li.setArt({'thumb': joj_logo, 'icon': joj_logo, 'fanart': joj_logo})
         
-        # Nastavenie videa
+        # Nastavenie informácií o videu
         li.setInfo('video', {'title': 'TV JOJ', 'mediatype': 'video'})
         li.setProperty('IsPlayable', 'true')
         
-        # Pridanie položky (isFolder=False znamená, že sa hneď spustí prehrávanie)
+        # Pridanie do zoznamu (isFolder=False spustí prehrávanie)
         xbmcplugin.addDirectoryItem(handle, joj_url, li, False)
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 4. OZNAM PRE ARCHÍV ---
+    # --- 4. OZNAM PRE ARCHÍV / NEFUNKČNÉ SEKCIE ---
     elif params.get('mode') == 'msg_archive':
         xbmcgui.Dialog().ok("Informácia", "Archív pripravujeme")
         xbmcplugin.endOfDirectory(handle, False)
