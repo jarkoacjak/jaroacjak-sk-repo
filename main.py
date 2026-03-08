@@ -55,10 +55,11 @@ def main():
             {"nazov": "JOJ Cinema", "url": "https://live.cdn.joj.sk/live/andromeda/cinema-1080.m3u8" + headers, "logo": "http://googleusercontent.com/profile/picture/2"},
             {"nazov": "JOJ Family", "url": "https://live.cdn.joj.sk/live/andromeda/family-1080.m3u8" + headers, "logo": "https://staticeu.sweet.tv/images/cache/channel_icons/BDUQMIAK/873-joj-family-hd.png"},
             {"nazov": "CS History", "url": "https://live.cdn.joj.sk/live/andromeda/cs_history-1080.m3u8" + headers, "logo": "https://img.joj.sk/418430b1-b598-40d1-8552-39b473c73836"},
+            {"nazov": "CS Film", "url": "https://live.cdn.joj.sk/live/andromeda/cs_film-1080.m3u8" + headers, "logo": "https://staticeu.sweet.tv/images/cache/channel_icons/BCTQOIAK/935-cs-film-hd.png"},
             {
-                "nazov": "CS Film", 
-                "url": "https://live.cdn.joj.sk/live/andromeda/cs_film-1080.m3u8" + headers, 
-                "logo": "https://staticeu.sweet.tv/images/cache/channel_icons/BCTQOIAK/935-cs-film-hd.png"
+                "nazov": "CS Mystery", 
+                "url": "https://live.cdn.joj.sk/live/andromeda/cs_mystery-1080.m3u8" + headers, 
+                "logo": "https://img.joj.sk/90e3d390-9f4f-48cb-9773-98a0a119dfa8"
             }
         ]
         
