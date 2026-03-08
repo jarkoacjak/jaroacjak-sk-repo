@@ -15,20 +15,25 @@ def main():
     except:
         return
 
-    # HLAVIČKY PRE STABILITU JOJ STREAMOV
+    # HLAVIČKY PRE STABILITU
     joj_headers = "|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36&Referer=https://videoportal.joj.sk/"
     common_headers = "|User-Agent=Mozilla/5.0"
     now = datetime.now()
 
-    # --- HLAVNÉ MENU (VÝBER KRAJINY) ---
+    # --- 1. HLAVNÉ MENU ---
     if not params:
-        xbmcplugin.addDirectoryItem(handle, build_url({'mode': 'list_sk'}), xbmcgui.ListItem(label="[B]🇸🇰 SLOVENSKÉ A CS STANICE[/B]"), True)
-        xbmcplugin.addDirectoryItem(handle, build_url({'mode': 'list_cz'}), xbmcgui.ListItem(label="[B]🇨🇿 ČESKÉ STANICE[/B]"), True)
+        # Tu som upravil názov podľa tvojej požiadavky
+        li_sk = xbmcgui.ListItem(label="[B]🇸🇰 slovenske yv[/B]")
+        xbmcplugin.addDirectoryItem(handle, build_url({'mode': 'list_sk'}), li_sk, True)
+        
+        li_cz = xbmcgui.ListItem(label="[B]🇨🇿 ČESKÉ STANICE[/B]")
+        xbmcplugin.addDirectoryItem(handle, build_url({'mode': 'list_cz'}), li_cz, True)
+        
         xbmcplugin.endOfDirectory(handle)
 
-    # --- SLOVENSKÉ A CS STANICE (Všetko v jednom zozname) ---
+    # --- 2. ZOZNAM STANÍC (slovenske yv) ---
     elif params.get('mode') == 'list_sk':
-        # EPG pre JOJ (podľa tvojho obrázka)
+        # EPG pre TV JOJ (podľa obrázka)
         epg_joj = [
             {"time": "12:15", "title": "James Bond: Casino Royale"},
             {"time": "15:25", "title": "Hviezdy nad hlavou 9"},
@@ -44,7 +49,7 @@ def main():
             if now >= start:
                 current_joj = item["title"]
 
-        vsetky_stanice = [
+        stanice = [
             {"n": "TV JOJ", "u": "joj-1080.m3u8", "l": "https://yt3.googleusercontent.com/8rPXBoj2l1nhd9C-DCXF-s3tx0i_36GJzJcxeMyYvyPpPNakQsyc5DYc5d_QLDeI74ILkmFSJQ=s900-c-k-c0x00ffffff-no-rj", "e": current_joj},
             {"n": "JOJ Plus", "u": "plus-1080.m3u8", "l": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100063553059682"},
             {"n": "JOJ Krimi", "u": "wau-1080.m3u8", "l": "https://www.interez.sk/wp-content/uploads/2026/02/krimi-joj-wau-televizia.jpg"},
@@ -59,28 +64,24 @@ def main():
             {"n": "Senzi TV", "u": "https://lb.streaming.sk/senzi/stream/playlist.m3u8" + common_headers, "l": "http://googleusercontent.com/profile/picture/3", "custom": True}
         ]
 
-        for s in vsetky_stanice:
+        for s in stanice:
             url = s["u"] if s.get("custom") else "https://live.cdn.joj.sk/live/andromeda/" + s["u"] + joj_headers
             name = f"{s['n']} | [COLOR yellow]{s.get('e', '')}[/COLOR]" if s.get('e') else s["n"]
             
             li = xbmcgui.ListItem(label=name)
             li.setArt({'thumb': s["l"], 'icon': s["l"]})
+            # Pridané Info, aby Kodi nevyhadzovalo chybu pri načítaní zoznamu
+            li.setInfo('video', {'title': s["n"]})
             li.setProperty('IsPlayable', 'true')
             xbmcplugin.addDirectoryItem(handle, url, li, False)
+            
         xbmcplugin.endOfDirectory(handle)
 
-    # --- ČESKÉ STANICE (Ostatné) ---
+    # --- 3. ČESKÉ STANICE ---
     elif params.get('mode') == 'list_cz':
-        cz_stanice = [
-            {"n": "ČT 1", "u": "https://example.com/ct1.m3u8", "l": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Ceskatelevize.svg"}
-        ]
-        for s in cz_stanice:
-            li = xbmcgui.ListItem(label=s["n"])
-            li.setArt({'thumb': s["l"]})
-            li.setProperty('IsPlayable', 'true')
-            xbmcplugin.addDirectoryItem(handle, s["u"], li, False)
+        # Tu môžeš neskôr doplniť ďalšie české linky
         xbmcplugin.endOfDirectory(handle)
 
 if __name__ == '__main__':
     main()
-    
+        
