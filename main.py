@@ -15,15 +15,14 @@ def main():
     except:
         return
 
-    # HLAVIČKY PRE STABILITU
     joj_headers = "|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36&Referer=https://videoportal.joj.sk/"
     common_headers = "|User-Agent=Mozilla/5.0"
     now = datetime.now()
 
     # --- 1. HLAVNÉ MENU ---
     if not params:
-        # Tu som upravil názov podľa tvojej požiadavky
-        li_sk = xbmcgui.ListItem(label="[B]🇸🇰 slovenske yv[/B]")
+        # Opravený názov na Slovenské TV
+        li_sk = xbmcgui.ListItem(label="[B]🇸🇰 Slovenské TV[/B]")
         xbmcplugin.addDirectoryItem(handle, build_url({'mode': 'list_sk'}), li_sk, True)
         
         li_cz = xbmcgui.ListItem(label="[B]🇨🇿 ČESKÉ STANICE[/B]")
@@ -31,9 +30,9 @@ def main():
         
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 2. ZOZNAM STANÍC (slovenske yv) ---
+    # --- 2. ZOZNAM STANÍC (Slovenské TV) ---
     elif params.get('mode') == 'list_sk':
-        # EPG pre TV JOJ (podľa obrázka)
+        # EPG pre TV JOJ (podľa tvojho obrázka)
         epg_joj = [
             {"time": "12:15", "title": "James Bond: Casino Royale"},
             {"time": "15:25", "title": "Hviezdy nad hlavou 9"},
@@ -70,18 +69,19 @@ def main():
             
             li = xbmcgui.ListItem(label=name)
             li.setArt({'thumb': s["l"], 'icon': s["l"]})
-            # Pridané Info, aby Kodi nevyhadzovalo chybu pri načítaní zoznamu
-            li.setInfo('video', {'title': s["n"]})
+            li.setInfo('video', {'title': s["n"], 'plot': s.get('e', '')})
             li.setProperty('IsPlayable', 'true')
+            
+            # Pridanie odkazu do zoznamu
             xbmcplugin.addDirectoryItem(handle, url, li, False)
             
         xbmcplugin.endOfDirectory(handle)
 
     # --- 3. ČESKÉ STANICE ---
     elif params.get('mode') == 'list_cz':
-        # Tu môžeš neskôr doplniť ďalšie české linky
+        # Tu je zoznam prázdny, aby to nepadalo
         xbmcplugin.endOfDirectory(handle)
 
 if __name__ == '__main__':
     main()
-        
+    
