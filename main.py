@@ -70,6 +70,11 @@ def main():
                 "nazov": "Jojko", 
                 "url": "https://live.cdn.joj.sk/live/andromeda/jojko-1080.m3u8" + headers, 
                 "logo": "https://yt3.googleusercontent.com/ytc/AIdro_k5JuOcgs57bLqO5jeAGqVWKskOxWRaYh1_mD7PYcE4Wg=s900-c-k-c0x00ffffff-no-rj"
+            },
+            {
+                "nazov": "JOJ Cinema", 
+                "url": "https://live.cdn.joj.sk/live/andromeda/cinema-1080.m3u8" + headers, 
+                "logo": "http://googleusercontent.com/profile/picture/2"
             }
         ]
         
