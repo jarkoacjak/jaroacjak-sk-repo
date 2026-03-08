@@ -65,6 +65,11 @@ def main():
                 "nazov": "JOJ 24", 
                 "url": "https://live.cdn.joj.sk/live/andromeda/joj_news-1080.m3u8" + headers, 
                 "logo": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100086546375437"
+            },
+            {
+                "nazov": "Jojko", 
+                "url": "https://live.cdn.joj.sk/live/andromeda/jojko-1080.m3u8" + headers, 
+                "logo": "https://yt3.googleusercontent.com/ytc/AIdro_k5JuOcgs57bLqO5jeAGqVWKskOxWRaYh1_mD7PYcE4Wg=s900-c-k-c0x00ffffff-no-rj"
             }
         ]
         
