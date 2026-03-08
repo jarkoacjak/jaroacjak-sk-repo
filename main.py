@@ -15,13 +15,13 @@ def main():
     except:
         return
 
-    joj_headers = "|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36&Referer=https://videoportal.joj.sk/"
+    # HLAVIČKY - ZABEZPEČUJÚ, ABY STREAM NEPADAL
+    joj_headers = "|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36&Referer=https://videoportal.joj.sk/"
     common_headers = "|User-Agent=Mozilla/5.0"
     now = datetime.now()
 
     # --- 1. HLAVNÉ MENU ---
     if not params:
-        # Opravený názov na Slovenské TV
         li_sk = xbmcgui.ListItem(label="[B]🇸🇰 Slovenské TV[/B]")
         xbmcplugin.addDirectoryItem(handle, build_url({'mode': 'list_sk'}), li_sk, True)
         
@@ -32,7 +32,7 @@ def main():
 
     # --- 2. ZOZNAM STANÍC (Slovenské TV) ---
     elif params.get('mode') == 'list_sk':
-        # EPG pre TV JOJ (podľa tvojho obrázka)
+        # EPG pre TV JOJ (podľa obrázka)
         epg_joj = [
             {"time": "12:15", "title": "James Bond: Casino Royale"},
             {"time": "15:25", "title": "Hviezdy nad hlavou 9"},
@@ -44,9 +44,11 @@ def main():
         
         current_joj = "Sledujte TV JOJ"
         for item in epg_joj:
-            start = datetime.strptime(item["time"], "%H:%M").replace(year=now.year, month=now.month, day=now.day)
-            if now >= start:
-                current_joj = item["title"]
+            try:
+                start = datetime.strptime(item["time"], "%H:%M").replace(year=now.year, month=now.month, day=now.day)
+                if now >= start:
+                    current_joj = item["title"]
+            except: pass
 
         stanice = [
             {"n": "TV JOJ", "u": "joj-1080.m3u8", "l": "https://yt3.googleusercontent.com/8rPXBoj2l1nhd9C-DCXF-s3tx0i_36GJzJcxeMyYvyPpPNakQsyc5DYc5d_QLDeI74ILkmFSJQ=s900-c-k-c0x00ffffff-no-rj", "e": current_joj},
@@ -69,17 +71,22 @@ def main():
             
             li = xbmcgui.ListItem(label=name)
             li.setArt({'thumb': s["l"], 'icon': s["l"]})
-            li.setInfo('video', {'title': s["n"], 'plot': s.get('e', '')})
+            li.setInfo('video', {'title': s["n"]})
             li.setProperty('IsPlayable', 'true')
             
-            # Pridanie odkazu do zoznamu
-            xbmcplugin.addDirectoryItem(handle, url, li, False)
+            # build_url mode: play zabezpečí stabilitu pri kliknutí
+            play_url = build_url({'mode': 'play', 'url': url})
+            xbmcplugin.addDirectoryItem(handle, play_url, li, False)
             
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 3. ČESKÉ STANICE ---
+    # --- 3. FUNKCIA PREHRÁVANIA (Zabraňuje chybám pri štarte) ---
+    elif params.get('mode') == 'play':
+        play_item = xbmcgui.ListItem(path=params.get('url'))
+        xbmcplugin.setResolvedUrl(handle, True, listitem=play_item)
+
+    # --- 4. ČESKÉ STANICE ---
     elif params.get('mode') == 'list_cz':
-        # Tu je zoznam prázdny, aby to nepadalo
         xbmcplugin.endOfDirectory(handle)
 
 if __name__ == '__main__':
