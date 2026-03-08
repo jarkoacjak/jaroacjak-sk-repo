@@ -28,13 +28,11 @@ def main():
 
     # --- 2. VÝBER KRAJINY PRE ŽIVÉ TV ---
     elif params.get('mode') == 'select_country_live':
-        # Slovensko
         url_sk = build_url({'mode': 'list_live_sk'})
         li_sk = xbmcgui.ListItem(label="[B]🇸🇰 SLOVENSKÉ TELEVÍZIE[/B]")
         li_sk.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/200px-Flag_of_Slovakia.svg.png'})
         xbmcplugin.addDirectoryItem(handle, url_sk, li_sk, True)
 
-        # Česko
         url_cz = build_url({'mode': 'msg_archive'}) 
         li_cz = xbmcgui.ListItem(label="[B]🇨🇿 ČESKÉ TELEVÍZIE[/B]")
         li_cz.setArt({'icon': 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/200px-Flag_of_the_Czech_Republic.svg.png'})
@@ -42,26 +40,34 @@ def main():
 
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 3. ZOZNAM SLOVENSKÝCH TV (Opravená JOJka) ---
+    # --- 3. ZOZNAM SLOVENSKÝCH TV ---
     elif params.get('mode') == 'list_live_sk':
-        # Stream s pridaným User-Agentom proti chybe prehrávania
-        joj_url = "https://live.cdn.joj.sk/live/andromeda/joj-1080.m3u8|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+        # Pridaný silnejší User-Agent a Referer pre oklamanie servera
+        headers = "|User-Agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36&Referer=https://videoportal.joj.sk/"
         
-        # Logo, ktoré si poslal
-        joj_logo = "https://yt3.googleusercontent.com/8rPXBoj2l1nhd9C-DCXF-s3tx0i_36GJzJcxeMyYvyPpPNakQsyc5DYc5d_QLDeI74ILkmFSJQ=s900-c-k-c0x00ffffff-no-rj"
+        tv_stanice = [
+            {
+                "nazov": "TV JOJ", 
+                "url": "https://live.cdn.joj.sk/live/andromeda/joj-1080.m3u8" + headers, 
+                "logo": "https://yt3.googleusercontent.com/8rPXBoj2l1nhd9C-DCXF-s3tx0i_36GJzJcxeMyYvyPpPNakQsyc5DYc5d_QLDeI74ILkmFSJQ=s900-c-k-c0x00ffffff-no-rj"
+            },
+            {
+                "nazov": "JOJ Krimi", 
+                "url": "https://live.cdn.joj.sk/live/andromeda/wau-1080.m3u8" + headers, 
+                "logo": "https://www.interez.sk/wp-content/uploads/2026/02/krimi-joj-wau-televizia.jpg"
+            }
+        ]
         
-        li = xbmcgui.ListItem(label="TV JOJ")
-        li.setArt({'thumb': joj_logo, 'icon': joj_logo, 'fanart': joj_logo})
-        
-        # Nastavenie informácií o videu
-        li.setInfo('video', {'title': 'TV JOJ', 'mediatype': 'video'})
-        li.setProperty('IsPlayable', 'true')
-        
-        # Pridanie do zoznamu (isFolder=False spustí prehrávanie)
-        xbmcplugin.addDirectoryItem(handle, joj_url, li, False)
+        for tv in tv_stanice:
+            li = xbmcgui.ListItem(label=tv["nazov"])
+            li.setArt({'thumb': tv["logo"], 'icon': tv["logo"], 'fanart': tv["logo"]})
+            li.setInfo('video', {'title': tv["nazov"], 'mediatype': 'video'})
+            li.setProperty('IsPlayable', 'true')
+            xbmcplugin.addDirectoryItem(handle, tv["url"], li, False)
+            
         xbmcplugin.endOfDirectory(handle)
 
-    # --- 4. OZNAM PRE ARCHÍV / NEFUNKČNÉ SEKCIE ---
+    # --- 4. OZNAM PRE ARCHÍV ---
     elif params.get('mode') == 'msg_archive':
         xbmcgui.Dialog().ok("Informácia", "Archív pripravujeme")
         xbmcplugin.endOfDirectory(handle, False)
