@@ -54,10 +54,11 @@ def main():
             {"nazov": "Jojko", "url": "https://live.cdn.joj.sk/live/andromeda/jojko-1080.m3u8" + headers, "logo": "https://yt3.googleusercontent.com/ytc/AIdro_k5JuOcgs57bLqO5jeAGqVWKskOxWRaYh1_mD7PYcE4Wg=s900-c-k-c0x00ffffff-no-rj"},
             {"nazov": "JOJ Cinema", "url": "https://live.cdn.joj.sk/live/andromeda/cinema-1080.m3u8" + headers, "logo": "http://googleusercontent.com/profile/picture/2"},
             {"nazov": "JOJ Family", "url": "https://live.cdn.joj.sk/live/andromeda/family-1080.m3u8" + headers, "logo": "https://staticeu.sweet.tv/images/cache/channel_icons/BDUQMIAK/873-joj-family-hd.png"},
+            {"nazov": "CS History", "url": "https://live.cdn.joj.sk/live/andromeda/cs_history-1080.m3u8" + headers, "logo": "https://img.joj.sk/418430b1-b598-40d1-8552-39b473c73836"},
             {
-                "nazov": "CS History", 
-                "url": "https://live.cdn.joj.sk/live/andromeda/cs_history-1080.m3u8" + headers, 
-                "logo": "https://img.joj.sk/418430b1-b598-40d1-8552-39b473c73836"
+                "nazov": "CS Film", 
+                "url": "https://live.cdn.joj.sk/live/andromeda/cs_film-1080.m3u8" + headers, 
+                "logo": "https://staticeu.sweet.tv/images/cache/channel_icons/BCTQOIAK/935-cs-film-hd.png"
             }
         ]
         
