@@ -60,6 +60,11 @@ def main():
                 "nazov": "JOJ Šport", 
                 "url": "https://live.cdn.joj.sk/live/andromeda/joj_sport-1080.m3u8" + headers, 
                 "logo": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100072427963738"
+            },
+            {
+                "nazov": "JOJ 24", 
+                "url": "https://live.cdn.joj.sk/live/andromeda/joj_news-1080.m3u8" + headers, 
+                "logo": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100086546375437"
             }
         ]
         
