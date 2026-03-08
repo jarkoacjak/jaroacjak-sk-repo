@@ -52,6 +52,11 @@ def main():
                 "logo": "https://yt3.googleusercontent.com/8rPXBoj2l1nhd9C-DCXF-s3tx0i_36GJzJcxeMyYvyPpPNakQsyc5DYc5d_QLDeI74ILkmFSJQ=s900-c-k-c0x00ffffff-no-rj"
             },
             {
+                "nazov": "JOJ Plus", 
+                "url": "https://live.cdn.joj.sk/live/andromeda/plus-1080.m3u8" + headers, 
+                "logo": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=100063553059682"
+            },
+            {
                 "nazov": "JOJ Krimi", 
                 "url": "https://live.cdn.joj.sk/live/andromeda/wau-1080.m3u8" + headers, 
                 "logo": "https://www.interez.sk/wp-content/uploads/2026/02/krimi-joj-wau-televizia.jpg"
