@@ -4,11 +4,11 @@
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>music</provides>
+        <provides>audio</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="sk">Slovenské a české rádiá na jednom mieste</summary>
-        <description lang="sk">Jednoduchý doplnok na počúvanie najpopulárnejších slovenských a českých rádiových staníc v najvyššej kvalite.</description>
+        <summary lang="sk">Slovenské a české rádiá</summary>
+        <description lang="sk">Kompletný zoznam slovenských a českých rádio staníc pre Kodi.</description>
         <platform>all</platform>
         <assets>
             <icon>icon.png</icon>
