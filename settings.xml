@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings version="1">
+    <section id="plugin.video.flow_play">
+        <category label="Prihlásenie">
+            <setting id="email" type="text" label="Email" default=""/>
+            <setting id="password" type="password" label="Heslo" default=""/>
+        </category>
+    </section>
+</settings>
+
