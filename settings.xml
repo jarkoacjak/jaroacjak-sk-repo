@@ -1,10 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<settings version="1">
-    <section id="plugin.video.flow_play">
-        <category label="Prihlásenie">
-            <setting id="email" type="text" label="Používateľ (Admin)" default=""/>
-            <setting id="password" type="password" label="Heslo (Kanianka8)" default=""/>
-        </category>
-    </section>
-</settings>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.video.flow_play" name="Flow play" version="1.0.0" provider-name="Jarko">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="sk">Streamovací doplnok Flow play</summary>
+        <description lang="sk">Sledujte relácie, filmy a logistiku cez Flow play. Prístup je chránený prihlasovaním priamo v doplnku.</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon>
+
 
