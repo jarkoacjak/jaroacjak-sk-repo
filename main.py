@@ -1,60 +1,70 @@
+import sys
+import urllib.parse
 import xbmcgui
-import xbmc
-import urllib.request
-import time
+import xbmcplugin
+import xbmcaddon
 
-def run_wifi_speedtest():
-    pDialog = xbmcgui.DialogProgress()
-    pDialog.create('Speed Test', 'Pripravujem test...')
-    
-    # Použijeme iný, veľmi stabilný testovací súbor (10MB)
-    test_url = "https://speed.hetzner.de/10MB.bin"
-    
-    # Nastavenie hlavičiek, aby server neodmietol spojenie
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
-    
-    try:
-        start_time = time.time()
-        
-        # Vytvorenie požiadavky s hlavičkami
-        req = urllib.request.Request(test_url, headers=headers)
-        response = urllib.request.urlopen(req, timeout=10)
-        
-        chunk_size = 1024 * 256 # 256KB bloky
-        downloaded = 0
-        total_size = 10485760 # 10MB
-        
-        while True:
-            chunk = response.read(chunk_size)
-            if not chunk:
-                break
-            downloaded += len(chunk)
-            
-            percent = int((downloaded / total_size) * 100)
-            if percent > 100: percent = 100
-            
-            pDialog.update(percent, 'Testujem rýchlosť tvojej Wi-Fi...', 
-                           'Stiahnuté: {} MB / 10 MB'.format(downloaded // 1048576))
-            
-            if pDialog.iscanceled():
-                return
+# Načítanie doplnku a nastavení
+addon = xbmcaddon.Addon()
 
-        end_time = time.time()
-        pDialog.close()
+def build_url(query):
+    return sys.argv[0] + '?' + urllib.parse.urlencode(query)
+
+def main():
+    # Načítanie údajov z nastavení (resources/settings.xml)
+    user_email = addon.getSetting('email')
+    user_password = addon.getSetting('password')
+
+    # --- KONTROLA PRIHLÁSENIA ---
+    if user_email == "Admin" and user_password == "Kanianka8":
+        # Ak sú údaje správne, pokračujeme do menu
+        rozcestnik()
+    else:
+        # Ak sú údaje nesprávne
+        xbmcgui.Dialog().ok('Flow play', 'Nesprávne prihlasovacie údaje!\nZadajte: Admin / Kanianka8')
+        return
+
+def rozcestnik():
+    handle = int(sys.argv[1])
+    arg_string = sys.argv[2][1:] if len(sys.argv[2]) > 1 else ""
+    params = dict(urllib.parse.parse_qsl(arg_string))
+
+    # --- HLAVNÉ MENU ---
+    if not params:
+        kategorie = [
+            {"label": "[B]Relácie[/B]", "mode": "relacie"},
+            {"label": "[B]Logistika[/B]", "mode": "logistika"},
+            {"label": "[B]Filmy[/B]", "mode": "filmy"}
+        ]
+
+        for kat in kategorie:
+            li = xbmcgui.ListItem(label=kat["label"])
+            url = build_url({'mode': kat["mode"]})
+            xbmcplugin.addDirectoryItem(handle, url, li, True)
         
-        duration = end_time - start_time
-        # Výpočet: (80 megabitov / čas v sekundách)
-        speed_mbps = round((80 / duration), 2)
-        
-        xbmcgui.Dialog().ok('Výsledok testu', 
-                            'Tvoja Wi-Fi rýchlosť: [B]{} Mbps[/B]'.format(speed_mbps))
-                            
-    except Exception as e:
-        if pDialog: pDialog.close()
-        # Vypíše presnú chybu, aby sme vedeli, čo opraviť
-        xbmcgui.Dialog().ok('Chyba testu', 'Nastal problém: {}'.format(str(e)))
+        xbmcplugin.endOfDirectory(handle)
+
+    # --- SEKCIA RELÁCIE ---
+    elif params.get('mode') == 'relacie':
+        xbmcgui.Dialog().notification('Flow play', 'Už čoskoro pripravujeme...', xbmcgui.NOTIFICATION_INFO, 5000)
+        li = xbmcgui.ListItem(label="[I]Relácie - Už čoskoro pripravujeme[/I]")
+        xbmcplugin.addDirectoryItem(handle, "", li, False)
+        xbmcplugin.endOfDirectory(handle)
+
+    # --- SEKCIA LOGISTIKA ---
+    elif params.get('mode') == 'logistika':
+        xbmcgui.Dialog().notification('Flow play', 'Už čoskoro pripravujeme...', xbmcgui.NOTIFICATION_INFO, 5000)
+        li = xbmcgui.ListItem(label="[I]Logistika - Už čoskoro pripravujeme[/I]")
+        xbmcplugin.addDirectoryItem(handle, "", li, False)
+        xbmcplugin.endOfDirectory(handle)
+
+    # --- SEKCIA FILMY ---
+    elif params.get('mode') == 'filmy':
+        xbmcgui.Dialog().notification('Flow play', 'Filmy pripravujeme...', xbmcgui.NOTIFICATION_INFO, 5000)
+        li = xbmcgui.ListItem(label="[I]Filmy pripravujeme...[/I]")
+        xbmcplugin.addDirectoryItem(handle, "", li, False)
+        xbmcplugin.endOfDirectory(handle)
 
 if __name__ == '__main__':
-    run_wifi_speedtest()
-
-
+    main()
+    
