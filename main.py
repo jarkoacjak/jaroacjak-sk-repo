@@ -2,20 +2,17 @@ import sys
 import urllib.parse
 import xbmcgui
 import xbmcplugin
+import xbmc
 
-# Funkcia na generovanie URL adries pre menu
 def build_url(query):
     return sys.argv[0] + '?' + urllib.parse.urlencode(query)
 
 def main():
-    try:
-        handle = int(sys.argv[1])
-        arg_string = sys.argv[2][1:] if len(sys.argv[2]) > 1 else ""
-        params = dict(urllib.parse.parse_qsl(arg_string))
-    except:
-        return
+    handle = int(sys.argv[1])
+    arg_string = sys.argv[2][1:] if len(sys.argv[2]) > 1 else ""
+    params = dict(urllib.parse.parse_qsl(arg_string))
 
-    # --- 1. HLAVNÉ MENU (Výber krajiny) ---
+    # --- 1. HLAVNÉ MENU ---
     if not params:
         # Slovensko
         url_sk = build_url({'country': 'sk'})
@@ -77,7 +74,6 @@ def main():
         ]
         zobraz_radia(handle, radia_sk)
 
-    # --- 3. ZOZNAM ČESKÝCH RÁDIÍ ---
     elif params.get('country') == 'cz':
         radia_cz = [
             {"nazov": "Rádio Kiss", "url": "https://n25a-eu.rcs.revma.com/asn0cmvb938uv", "logo": "https://i1.sndcdn.com/artworks-000055555247-hukx9y-t500x500.jpg"},
@@ -88,7 +84,6 @@ def main():
         ]
         zobraz_radia(handle, radia_cz)
 
-# Univerzálna funkcia na zobrazenie zoznamu
 def zobraz_radia(handle, zoznam):
     for radio in zoznam:
         li = xbmcgui.ListItem(label=radio["nazov"])
@@ -106,4 +101,5 @@ def zobraz_radia(handle, zoznam):
 
 if __name__ == '__main__':
     main()
-             
+
+
