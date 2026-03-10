@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.speedtest" name="Speed Test" version="1.0.0" provider-name="Jarko">
+<addon id="plugin.video.flow_play" name="Flow play" version="1.0.0" provider-name="Jarko">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
-    <extension point="xbmc.python.script" library="main.py">
-        <provides>executable</provides>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="sk">Jednoduchý test rýchlosti internetu</summary>
-        <description lang="sk">Tento doplnok ti umožní skontrolovať stabilitu a rýchlosť tvojho pripojenia priamo v Kodi.</description>
+        <summary lang="sk">Streamovací doplnok Flow play</summary>
+        <description lang="sk">Sledujte videá a streamy cez Flow play. Pre prístup je potrebné sa prihlásiť v nastaveniach doplnku.</description>
         <platform>all</platform>
         <assets>
             <icon>icon.png</icon>
         </assets>
     </extension>
 </addon>
+
