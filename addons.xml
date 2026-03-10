@@ -1,0 +1,7 @@
+<extension point="xbmc.addon.metadata">
+    <assets>
+        <icon>icon.png</icon>
+    </assets>
+</extension>
+
+
