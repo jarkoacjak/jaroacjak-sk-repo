@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.tvfree" name="TV Free" version="1.0.0" provider-name="Jarko">
+<addon id="script.speedtest" name="Speed Test" version="1.0.0" provider-name="Jarko">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
-    <extension point="xbmc.python.pluginsource" library="main.py">
-        <provides>video</provides>
+    <extension point="xbmc.python.script" library="main.py">
+        <provides>executable</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>Slovenské a České TV stanice zadarmo</summary>
-        <description>Sledujte živé vysielanie slovenských a českých televízií priamo v Kodi.</description>
+        <summary lang="sk">Jednoduchý test rýchlosti internetu</summary>
+        <description lang="sk">Tento doplnok ti umožní skontrolovať stabilitu a rýchlosť tvojho pripojenia priamo v Kodi.</description>
         <platform>all</platform>
         <assets>
             <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
 </addon>
-
