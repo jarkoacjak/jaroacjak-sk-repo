@@ -8,7 +8,7 @@
         <summary lang="sk">Slovenské rádio</summary>
         <platform>all</platform>
         <assets><icon>icon.png</icon></assets>
-        <source>https://github.com/jarkoacjak/jaroacjak-sk-repo/raw/ad15915b58ede48773a9e589113d4e725ac02324/plugin.audio.pocuvaj_radio.zip</source>
+        <datadir zip="true">https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/ad15915b58ede48773a9e589113d4e725ac02324/</datadir>
     </extension>
 </addon>
 
@@ -19,7 +19,7 @@
         <summary lang="sk">Flow play video</summary>
         <platform>all</platform>
         <assets><icon>icon.png</icon></assets>
-        <source>https://github.com/jarkoacjak/jaroacjak-sk-repo/raw/ad15915b58ede48773a9e589113d4e725ac02324/plugin.video.flow_play.zip</source>
+        <datadir zip="true">https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/ad15915b58ede48773a9e589113d4e725ac02324/</datadir>
     </extension>
 </addon>
 
@@ -30,7 +30,7 @@
         <summary lang="sk">Slovenské TV zdarma</summary>
         <platform>all</platform>
         <assets><icon>icon.png</icon></assets>
-        <source>https://github.com/jarkoacjak/jaroacjak-sk-repo/raw/ad15915b58ede48773a9e589113d4e725ac02324/plugin.video.tv_free.zip</source>
+        <datadir zip="true">https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/ad15915b58ede48773a9e589113d4e725ac02324/</datadir>
     </extension>
 </addon>
 
