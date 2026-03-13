@@ -5,10 +5,9 @@
     <requires><import addon="xbmc.python" version="3.0.0"/></requires>
     <extension point="xbmc.python.pluginsource" library="main.py"><provides>audio</provides></extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="sk">Slovenské rádio</summary>
         <platform>all</platform>
         <assets><icon>icon.png</icon></assets>
-        <datadir zip="true">https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/ad15915b58ede48773a9e589113d4e725ac02324/</datadir>
+        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/jaroacjak-sk-repo-main.zip</datadir>
     </extension>
 </addon>
 
@@ -16,10 +15,9 @@
     <requires><import addon="xbmc.python" version="3.0.0"/></requires>
     <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="sk">Flow play video</summary>
         <platform>all</platform>
         <assets><icon>icon.png</icon></assets>
-        <datadir zip="true">https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/ad15915b58ede48773a9e589113d4e725ac02324/</datadir>
+        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/jaroacjak-sk-repo-main.zip</datadir>
     </extension>
 </addon>
 
@@ -27,11 +25,11 @@
     <requires><import addon="xbmc.python" version="3.0.0"/></requires>
     <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="sk">Slovenské TV zdarma</summary>
         <platform>all</platform>
         <assets><icon>icon.png</icon></assets>
-        <datadir zip="true">https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/ad15915b58ede48773a9e589113d4e725ac02324/</datadir>
+        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/jaroacjak-sk-repo-main.zip</datadir>
     </extension>
 </addon>
 
+</addons>
 </addons>
