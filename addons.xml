@@ -1,35 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
     <addon id="plugin.audio.pocuvaj_radio" name="Počúvaj rádio" version="1.0.0" provider-name="Jarko">
-        <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-        <extension point="xbmc.python.pluginsource" library="main.py"><provides>audio</provides></extension>
+        <requires>
+            <import addon="xbmc.python" version="3.0.0"/>
+        </requires>
+        <extension point="xbmc.python.pluginsource" library="main.py">
+            <provides>audio</provides>
+        </extension>
         <extension point="xbmc.addon.metadata">
-            <summary lang="sk">Slovenské rádiá</summary>
-            <description lang="sk">Rádiá naživo</description>
+            <summary lang="sk">Slovenské internetové rádiá</summary>
+            <description lang="sk">Tento doplnok umožňuje počúvať slovenské internetové rádiá priamo vo vašom Kodi.</description>
             <platform>all</platform>
-            <assets><icon>icon.png</icon></assets>
+            <assets>
+                <icon>icon.png</icon>
+            </assets>
             <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/</datadir>
         </extension>
     </addon>
+
     <addon id="plugin.video.tv_free" name="TV Free" version="1.0.0" provider-name="Jarko">
-        <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-        <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
+        <requires>
+            <import addon="xbmc.python" version="3.0.0"/>
+        </requires>
+        <extension point="xbmc.python.pluginsource" library="main.py">
+            <provides>video</provides>
+        </extension>
         <extension point="xbmc.addon.metadata">
-            <summary lang="sk">Slovenské TV</summary>
-            <description lang="sk">TV zadarmo</description>
+            <summary lang="sk">Slovenské TV stanice zadarmo</summary>
+            <description lang="sk">Sledujte voľne dostupné slovenské televízne stanice na jednom mieste bez poplatkov.</description>
             <platform>all</platform>
-            <assets><icon>icon.png</icon></assets>
+            <assets>
+                <icon>icon.png</icon>
+            </assets>
             <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/</datadir>
         </extension>
     </addon>
+
     <addon id="plugin.video.flow_play" name="Flow Play" version="1.0.0" provider-name="Jarko">
-        <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-        <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
+        <requires>
+            <import addon="xbmc.python" version="3.0.0"/>
+        </requires>
+        <extension point="xbmc.python.pluginsource" library="main.py">
+            <provides>video</provides>
+        </extension>
         <extension point="xbmc.addon.metadata">
-            <summary lang="sk">Flow Play</summary>
-            <description lang="sk">Videá Flow</description>
+            <summary lang="sk">Prehrávač Flow Play</summary>
+            <description lang="sk">Doplnok na prehrávanie obsahu zo siete Flow.</description>
             <platform>all</platform>
-            <assets><icon>icon.png</icon></assets>
+            <assets>
+                <icon>icon.png</icon>
+            </assets>
             <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/</datadir>
         </extension>
     </addon>
