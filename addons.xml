@@ -5,8 +5,6 @@
         <extension point="xbmc.python.pluginsource" library="main.py"><provides>audio</provides></extension>
         <extension point="xbmc.addon.metadata">
             <platform>all</platform>
-            <assets><icon>icon.png</icon></assets>
-            <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/</datadir>
         </extension>
     </addon>
 
@@ -15,8 +13,6 @@
         <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
         <extension point="xbmc.addon.metadata">
             <platform>all</platform>
-            <assets><icon>icon.png</icon></assets>
-            <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/</datadir>
         </extension>
     </addon>
 
@@ -25,8 +21,6 @@
         <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
         <extension point="xbmc.addon.metadata">
             <platform>all</platform>
-            <assets><icon>icon.png</icon></assets>
-            <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/</datadir>
         </extension>
     </addon>
 </addons>
