@@ -8,8 +8,8 @@
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>Slovenské doplnky od Jarka</summary>
-        <description>Tento repozitár obsahuje doplnky TV Free, Počúvaj rádio a Flow Play.</description>
+        <summary>Slovenské doplnky</summary>
+        <description>Repozitár pre TV Free, Rádio a Flow Play.</description>
         <platform>all</platform>
     </extension>
 </addon>
