@@ -2,14 +2,14 @@
 <addon id="repository.jarkoacjak" name="Jarkoacjak SK Repo" version="1.0.0" provider-name="Jarko">
     <extension point="xbmc.addon.repository" name="Jarkoacjak SK Repo">
         <dir>
-            <info compressed="false">https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/master/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/master/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/master/</datadir>
+            <info compressed="false">https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml</info>
+            <checksum>https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml.md5</checksum>
+            <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/</datadir>
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>Jarkove Slovenské Doplnky</summary>
-        <description>Repozitár pre TV Free, Flow Play a Počúvaj rádio.</description>
+        <description>V sekcii Video nájdete TV a Flow Play, v sekcii Hudba nájdete Rádiá.</description>
         <platform>all</platform>
     </extension>
 </addon>
