@@ -4,11 +4,11 @@
         <requires><import addon="xbmc.python" version="3.0.0"/></requires>
         <extension point="xbmc.python.pluginsource" library="main.py"><provides>audio</provides></extension>
         <extension point="xbmc.addon.metadata">
-            <summary lang="sk">Slovenské rádiá naživo</summary>
-            <description lang="sk">Internetové rádiá priamo v Kodi.</description>
+            <summary lang="sk">Slovenské internetové rádiá</summary>
+            <description lang="sk">Počúvajte slovenské rádiá naživo priamo v Kodi.</description>
             <platform>all</platform>
             <assets><icon>icon.png</icon></assets>
-            <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/</datadir>
+            <datadir zip="true">https://github.com/jarkoacjak/jaroacjak-sk-repo/raw/5976903ee2640cd3fa79bf73ee8f89e899a29ef7/</datadir>
         </extension>
     </addon>
 
@@ -16,11 +16,11 @@
         <requires><import addon="xbmc.python" version="3.0.0"/></requires>
         <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
         <extension point="xbmc.addon.metadata">
-            <summary lang="sk">Slovenské TV zadarmo</summary>
-            <description lang="sk">Voľne dostupné stanice na jednom mieste.</description>
+            <summary lang="sk">Slovenské TV stanice zadarmo</summary>
+            <description lang="sk">Sledujte voľne dostupné slovenské televízne stanice na jednom mieste.</description>
             <platform>all</platform>
             <assets><icon>icon.png</icon></assets>
-            <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/</datadir>
+            <datadir zip="true">https://github.com/jarkoacjak/jaroacjak-sk-repo/raw/5976903ee2640cd3fa79bf73ee8f89e899a29ef7/</datadir>
         </extension>
     </addon>
 
@@ -28,11 +28,11 @@
         <requires><import addon="xbmc.python" version="3.0.0"/></requires>
         <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
         <extension point="xbmc.addon.metadata">
-            <summary lang="sk">Flow Play Video</summary>
-            <description lang="sk">Doplnok pre sieť Flow.</description>
+            <summary lang="sk">Prehrávač Flow Play</summary>
+            <description lang="sk">Doplnok na prehrávanie obsahu zo siete Flow.</description>
             <platform>all</platform>
             <assets><icon>icon.png</icon></assets>
-            <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/</datadir>
+            <datadir zip="true">https://github.com/jarkoacjak/jaroacjak-sk-repo/raw/5976903ee2640cd3fa79bf73ee8f89e899a29ef7/</datadir>
         </extension>
     </addon>
 </addons>
