@@ -26,8 +26,8 @@
         <requires><import addon="xbmc.python" version="3.0.0"/></requires>
         <extension point="xbmc.python.pluginsource" library="main.py"><provides>audio</provides></extension>
         <extension point="xbmc.addon.metadata">
-            <summary lang="sk">Slovenské rádiá</summary>
-            <description lang="sk">Počúvajte slovenské rádiá naživo priamo v Kodi.</description>
+            <summary lang="sk">Slovenské internetové rádiá</summary>
+            <description lang="sk">Počúvajte slovenské rádiá naživo priamo vo vašom Kodi.</description>
             <platform>all</platform>
             <assets><icon>icon.png</icon></assets>
         </extension>
