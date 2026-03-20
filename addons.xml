@@ -5,7 +5,7 @@
         <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
         <extension point="xbmc.addon.metadata">
             <summary lang="sk">Slovenské TV zadarmo</summary>
-            <description lang="sk">Sledujte voľne dostupné slovenské televízne stanice na jednom mieste.</description>
+            <description lang="sk">Sledujte voľne dostupné slovenské televízne stanice.</description>
             <platform>all</platform>
             <assets><icon>icon.png</icon></assets>
         </extension>
@@ -27,7 +27,7 @@
         <extension point="xbmc.python.pluginsource" library="main.py"><provides>audio</provides></extension>
         <extension point="xbmc.addon.metadata">
             <summary lang="sk">Slovenské internetové rádiá</summary>
-            <description lang="sk">Počúvajte slovenské rádiá naživo priamo vo vašom Kodi.</description>
+            <description lang="sk">Počúvajte slovenské rádiá naživo priamo v Kodi.</description>
             <platform>all</platform>
             <assets><icon>icon.png</icon></assets>
         </extension>
