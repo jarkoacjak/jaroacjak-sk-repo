@@ -1,35 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addons>
-    <addon id="plugin.video.tv_free" name="TV Free" version="1.0.0" provider-name="Jarko">
-        <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-        <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
-        <extension point="xbmc.addon.metadata">
-            <summary lang="sk">Slovenské TV zadarmo</summary>
-            <description lang="sk">Sledujte voľne dostupné slovenské televízne stanice na jednom mieste.</description>
-            <platform>all</platform>
-            <assets><icon>icon.png</icon></assets>
-        </extension>
-    </addon>
-
-    <addon id="plugin.video.flow_play" name="Flow Play" version="1.0.0" provider-name="Jarko">
-        <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-        <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
-        <extension point="xbmc.addon.metadata">
-            <summary lang="sk">Prehrávač Flow Play</summary>
-            <description lang="sk">Doplnok pre video obsah zo siete Flow.</description>
-            <platform>all</platform>
-            <assets><icon>icon.png</icon></assets>
-        </extension>
-    </addon>
-
-    <addon id="plugin.audio.pocuvaj_radio" name="Počúvaj rádio" version="1.0.0" provider-name="Jarko">
-        <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-        <extension point="xbmc.python.pluginsource" library="main.py"><provides>audio</provides></extension>
-        <extension point="xbmc.addon.metadata">
-            <summary lang="sk">Slovenské internetové rádiá</summary>
-            <description lang="sk">Počúvajte slovenské rádiá naživo priamo vo vašom Kodi.</description>
-            <platform>all</platform>
-            <assets><icon>icon.png</icon></assets>
-        </extension>
-    </addon>
-</addons>
+<addon id="repository.jarkoacjak" name="Jarkoacjak SK Repo" version="1.0.0" provider-name="Jarko">
+    <extension point="xbmc.addon.repository" name="Jarkoacjak SK Repo">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/master/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Jarkove Slovenské Doplnky</summary>
+        <description>Repozitár pre TV Free, Flow Play a Počúvaj rádio.</description>
+        <platform>all</platform>
+    </extension>
+</addon>
