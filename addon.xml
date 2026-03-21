@@ -8,8 +8,11 @@
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>Moje Slovenské Doplnky</summary>
-        <description>V sekcii Video nájdete TV a Flow Play, v sekcii Hudba nájdete Rádiá.</description>
+        <summary lang="sk">Slovenské rádio a video doplnky</summary>
+        <description lang="sk">Doplnky Počúvaj rádio, Flow Play a TV Free.</description>
         <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
     </extension>
 </addon>
