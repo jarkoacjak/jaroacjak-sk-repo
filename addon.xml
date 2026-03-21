@@ -8,7 +8,7 @@
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>Jarkove Slovenské Doplnky</summary>
+        <summary>Moje Slovenské Doplnky</summary>
         <description>V sekcii Video nájdete TV a Flow Play, v sekcii Hudba nájdete Rádiá.</description>
         <platform>all</platform>
     </extension>
