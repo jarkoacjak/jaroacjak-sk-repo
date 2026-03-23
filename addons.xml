@@ -1,33 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
 
-<addon id="plugin.audio.pocuvaj_radio" name="Počúvaj rádio" version="1.0.0" provider-name="Jarko">
-    <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-    <extension point="xbmc.python.pluginsource" library="main.py"><provides>audio</provides></extension>
+<addon id="repository.jarkoacjak" name="jarkoacjak repo" version="1.0.0" provider-name="Jarko">
+    <extension point="xbmc.addon.repository" name="jarkoacjak repo">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/jarkoacjak/jaroacjak-sk-repo/master/</datadir>
+        </dir>
+    </extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="sk">Hudba: Rádiá</summary>
+        <summary lang="sk">Repozitár doplnkov od Jarka</summary>
+        <description lang="sk">Obsahuje doplnky Pučuvam Radia, TV free a Flow play.</description>
         <platform>all</platform>
-        <assets><icon>icon.png</icon></assets>
+    </extension>
+</addon>
+
+<addon id="plugin.audio.pocuvaj_radio" name="Pučuvam Radia" version="1.0.0" provider-name="Jarko">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>audio</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="sk">Slovenské rádiá</summary>
+        <description lang="sk">Počúvajte slovenské rádiá online.</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="plugin.video.tv_free" name="TV free" version="1.0.0" provider-name="Jarko">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="sk">Bezplatné TV stanice</summary>
+        <description lang="sk">Sledovanie voľne dostupných TV streamov.</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
     </extension>
 </addon>
 
 <addon id="plugin.video.flow_play" name="Flow play" version="1.0.0" provider-name="Jarko">
-    <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-    <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="sk">Video: Flow play</summary>
-        <platform>all</platform>
-        <assets><icon>icon.png</icon></assets>
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>video</provides>
     </extension>
-</addon>
-
-<addon id="plugin.video.tv_free" name="TV Free" version="1.0.0" provider-name="Jarko">
-    <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-    <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="sk">Video: TV zdarma</summary>
+        <summary lang="sk">Flow play videá</summary>
+        <description lang="sk">Doplnok pre sledovanie videí cez Flow play.</description>
         <platform>all</platform>
-        <assets><icon>icon.png</icon></assets>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
     </extension>
 </addon>
 
