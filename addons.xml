@@ -25,6 +25,7 @@
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary lang="sk">Slovenské rádiá online</summary>
+        <description lang="sk">Doplnok na počúvanie slovenských rádií.</description>
         <platform>all</platform>
     </extension>
 </addon>
@@ -38,6 +39,7 @@
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary lang="sk">Bezplatné TV stanice</summary>
+        <description lang="sk">Sledovanie voľne dostupných TV streamov.</description>
         <platform>all</platform>
     </extension>
 </addon>
@@ -51,6 +53,7 @@
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary lang="sk">Flow play videá</summary>
+        <description lang="sk">Doplnok pre sledovanie videí cez Flow play.</description>
         <platform>all</platform>
     </extension>
 </addon>
