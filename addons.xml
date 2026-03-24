@@ -15,33 +15,24 @@
     </extension>
 </addon>
 
-<addon id="plugin.audio.pocuvam_radia.zip" name="Počuvam Radia" version="1.0.0" provider-name="Jarko">
+<addon id="plugin.audio.pocuvam_radio" name="Počuvaj Radia" version="1.0.0" provider-name="Jarko">
     <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py"><provides>audio</provides></extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="sk">Slovenské rádiá</summary>
-        <platform>all</platform>
-        <assets><icon>icon.png</icon></assets>
-    </extension>
-</addon>
-
-<addon id="plugin.video.tv_free.zip" name="TV free" version="1.0.0" provider-name="Jarko">
-    <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py"><provides>video</provides></extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="sk">Bezplatné TV</summary>
-        <platform>all</platform>
-        <assets><icon>icon.png</icon></assets>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>audio</provides>
     </extension>
 </addon>
 
 <addon id="plugin.video.flow_play" name="Flow play" version="1.0.0" provider-name="Jarko">
     <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py"><provides>video</provides></extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="sk">Flow play videá</summary>
-        <platform>all</platform>
-        <assets><icon>icon.png</icon></assets>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
+    </extension>
+</addon>
+
+<addon id="plugin.video.tv_free" name="TV free" version="1.0.0" provider-name="Jarko">
+    <requires><import addon="xbmc.python" version="3.0.0"/></requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video</provides>
     </extension>
 </addon>
 
