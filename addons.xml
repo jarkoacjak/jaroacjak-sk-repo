@@ -1,30 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-
 <addon id="repository.jarkoacjak" name="jarkoacjak repo" version="1.0.0" provider-name="Jarko">
-    <extension point="xbmc.addon.repository" name="jarkoacjak repo">
-        <dir>
-            <info compressed="false">https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml</info>
-            <checksum>https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml.md5</checksum>
-            <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/</datadir>
-        </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata"><summary lang="sk">Moje vlastné doplnky pre Kodi</summary><platform>all</platform></extension>
+<extension point="xbmc.addon.repository" name="jarkoacjak repo">
+<dir>
+<info compressed="false">https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml</info>
+<checksum>https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml.md5</checksum>
+<datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/</datadir>
+</dir>
+</extension>
+<extension point="xbmc.addon.metadata"><summary lang="sk">Moje vlastné doplnky pre Kodi</summary><description lang="sk">Repozitár obsahuje doplnky: Počuvam Radia, TV free a Flow play.</description><platform>all</platform></extension>
 </addon>
-
 <addon id="plugin.audio.pocuvam.radio" name="Počuvam Radia" version="1.0.0" provider-name="Jarko">
-    <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-    <extension point="xbmc.python.pluginsource" library="main.py"><provides>audio</provides></extension>
+<requires><import addon="xbmc.python" version="3.0.0"/></requires>
+<extension point="xbmc.python.pluginsource" library="main.py"><provides>audio</provides></extension>
 </addon>
-
 <addon id="plugin.video.tv_free" name="TV free" version="1.0.0" provider-name="Jarko">
-    <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-    <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
+<requires><import addon="xbmc.python" version="3.0.0"/></requires>
+<extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
 </addon>
-
 <addon id="plugin.video.flow_play" name="Flow play" version="1.0.0" provider-name="Jarko">
-    <requires><import addon="xbmc.python" version="3.0.0"/></requires>
-    <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
+<requires><import addon="xbmc.python" version="3.0.0"/></requires>
+<extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
 </addon>
-
 </addons>
