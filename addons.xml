@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-
 <addon id="repository.jarkoacjak" name="jarkoacjak repo" version="1.0.0" provider-name="Jarko">
     <extension point="xbmc.addon.repository" name="jarkoacjak repo">
         <dir>
@@ -11,20 +10,16 @@
     </extension>
     <extension point="xbmc.addon.metadata"><summary lang="sk">Moje vlastné doplnky</summary><platform>all</platform></extension>
 </addon>
-
 <addon id="plugin.audio.pocuvam.radio" name="Počuvam Radia" version="1.0.0" provider-name="Jarko">
     <requires><import addon="xbmc.python" version="3.0.0"/></requires>
     <extension point="xbmc.python.pluginsource" library="announcements.py"><provides>audio</provides></extension>
 </addon>
-
 <addon id="plugin.video.tv_free" name="TV free" version="1.0.0" provider-name="Jarko">
     <requires><import addon="xbmc.python" version="3.0.0"/></requires>
     <extension point="xbmc.python.pluginsource" library="announcements.py"><provides>video</provides></extension>
 </addon>
-
 <addon id="plugin.video.flow_play" name="Flow play" version="1.0.0" provider-name="Jarko">
     <requires><import addon="xbmc.python" version="3.0.0"/></requires>
     <extension point="xbmc.python.pluginsource" library="announcements.py"><provides>video</provides></extension>
 </addon>
-
 </addons>
