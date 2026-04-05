@@ -20,7 +20,7 @@
     <requires><import addon="xbmc.python" version="3.0.0"/></requires>
     <extension point="xbmc.python.pluginsource" library="main.py"><provides>video</provides></extension>
     <extension point="xbmc.addon.repository">
-        <datadir zip="true">https://raw.githubusercontent.com/jarkoacjak/plugin.video.flow_play/main/</datadir>
+        <datadir zip="true">https://github.com/jarkoacjak/plugin.video.flow_play</datadir>
     </extension>
 </addon>
 
