@@ -36,7 +36,7 @@
     <requires><import addon="xbmc.python" version="3.0.0"/></requires>
     <extension point="xbmc.python.pluginsource" library="main.py"><provides>audio</provides></extension>
     <extension point="xbmc.addon.repository">
-        <datadir zip="true">https://raw.githubusercontent.com/jarkoacjak/plugin.audio.pocuvam.radio/main/</datadir>
+        <datadir zip="true">https://github.com/jarkoacjak/plugin.audio.pocuvam.radio</datadir>
     </extension>
 </addon>
 
