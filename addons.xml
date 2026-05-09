@@ -17,32 +17,46 @@
 </addon>
 
 <addon id="plugin.audio.pocuvam.radio" name="Počuvam Rádio" version="1.0.0" provider-name="Jarko">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>audio</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>Slovenské rádiá</summary>
         <platform>all</platform>
+        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.audio.pocuvam.radio/</datadir>
     </extension>
 </addon>
 
 <addon id="plugin.video.flowplay" name="Flow play" version="1.0.0" provider-name="Jarko">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.inputstreamhelper" version="0.5.0"/>
+    </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>Video doplnok Flow play</summary>
         <platform>all</platform>
+        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.flowplay/</datadir>
     </extension>
 </addon>
 
 <addon id="plugin.video.tvfree" name="Tv free" version="1.0.0" provider-name="Jarko">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.inputstreamhelper" version="0.5.0"/>
+    </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>Televízia zadarmo</summary>
         <platform>all</platform>
+        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.tvfree/</datadir>
     </extension>
 </addon>
 
