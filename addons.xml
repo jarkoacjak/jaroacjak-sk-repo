@@ -17,9 +17,6 @@
 </addon>
 
 <addon id="plugin.audio.pocuvam.radio" name="Počuvam Rádio" version="1.0.0" provider-name="Jarko">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>audio</provides>
     </extension>
@@ -31,10 +28,6 @@
 </addon>
 
 <addon id="plugin.video.flowplay" name="Flow play" version="1.0.0" provider-name="Jarko">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-        <import addon="script.module.inputstreamhelper" version="0.5.0"/>
-    </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
     </extension>
@@ -46,10 +39,6 @@
 </addon>
 
 <addon id="plugin.video.tvfree" name="Tv free" version="1.0.0" provider-name="Jarko">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-        <import addon="script.module.inputstreamhelper" version="0.5.0"/>
-    </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
     </extension>
@@ -61,4 +50,3 @@
 </addon>
 
 </addons>
-
