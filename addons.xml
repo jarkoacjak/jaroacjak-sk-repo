@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
 
-<addon id="repository.jarkoacjak" name="Jarko" version="1.0.0" provider-name="Jarko">
-    <extension point="xbmc.addon.repository" name="Jarko">
+<addon id="repository.jarkoacjak" name="jarkoacjak repo" version="1.0.0" provider-name="Jarko">
+    <extension point="xbmc.addon.repository" name="jarkoacjak repo">
         <dir>
             <info compressed="false">https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml</info>
             <checksum>https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml.md5</checksum>
@@ -11,7 +11,7 @@
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary>Moje Doplnky</summary>
-        <description>Rádio, Flow play a TV Free od Jarka.</description>
+        <description>Rádio, Flow play a TV Free.</description>
         <platform>all</platform>
     </extension>
 </addon>
@@ -47,4 +47,3 @@
 </addon>
 
 </addons>
-
