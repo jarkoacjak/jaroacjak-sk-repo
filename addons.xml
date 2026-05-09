@@ -26,7 +26,7 @@
     <extension point="xbmc.addon.metadata">
         <summary>Slovenské rádiá</summary>
         <platform>all</platform>
-        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.audio.pocuvam.radio/</datadir>
+        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.audio.pocuvam.radio/plugin.audio.pocuvam.radio-1.0.0.zip</datadir>
     </extension>
 </addon>
 
@@ -41,7 +41,7 @@
     <extension point="xbmc.addon.metadata">
         <summary>Video doplnok Flow play</summary>
         <platform>all</platform>
-        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.flowplay/</datadir>
+        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.flowplay/plugin.video.flowplay-1.0.0.zip</datadir>
     </extension>
 </addon>
 
@@ -56,8 +56,9 @@
     <extension point="xbmc.addon.metadata">
         <summary>Televízia zadarmo</summary>
         <platform>all</platform>
-        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.tvfree/</datadir>
+        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.tvfree/plugin.video.tvfree-1.0.0.zip</datadir>
     </extension>
 </addon>
 
 </addons>
+
