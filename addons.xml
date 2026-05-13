@@ -16,7 +16,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.audio.pocuvam.radio" name="Počuvam Rádio" version="1.0.15" provider-name="Jarko">
+<addon id="plugin.audio.pocuvam.radio" name="Počuvam Rádio" version="1.0.17" provider-name="Jarko">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -26,7 +26,7 @@
     <extension point="xbmc.addon.metadata">
         <summary>Slovenské rádiá</summary>
         <platform>all</platform>
-        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.audio.pocuvam.radio/plugin.audio.pocuvam.radio-1.0.15.zip</datadir>
+        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.audio.pocuvam.radio/plugin.audio.pocuvam.radio-1.0.17.zip</datadir>
     </extension>
 </addon>
 
