@@ -1,61 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
 
-<addon id="repository.jarkoacjak" name="jarkoacjak repo" version="1.0.0" provider-name="Jarko">
+  <addon id="repository.jarkoacjak" name="jarkoacjak repo" version="1.0.0" provider-name="Jarko">
     <extension point="xbmc.addon.repository" name="jarkoacjak repo">
-        <dir>
-            <info compressed="false">https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml</info>
-            <checksum>https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml.md5</checksum>
-            <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/</datadir>
-        </dir>
+      <dir>
+        <info compressed="false">https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml</info>
+        <checksum>https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml.md5</checksum>
+        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/</datadir>
+      </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>Moje Doplnky</summary>
-        <description>Rádio, Flow play a TV Free.</description>
-        <platform>all</platform>
+      <summary>Jarko ACJAK Repozitár</summary>
+      <platform>all</platform>
     </extension>
-</addon>
+  </addon>
 
-<addon id="plugin.audio.pocuvam.radio" name="Počuvam Rádio" version="1.0.18" provider-name="Jarko">
+  <addon id="plugin.audio.pocuvam.radio" name="Počúvam rádio" version="1.0.20" provider-name="Jarko">
     <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
+      <import addon="xbmc.python" version="3.0.0"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>audio</provides>
+      <provides>audio</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>Slovenské rádiá</summary>
-        <platform>all</platform>
-        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.audio.pocuvam.radio/plugin.audio.pocuvam.radio-1.0.20.zip</datadir>
+      <summary>Slovenské a české rádiá</summary>
+      <platform>all</platform>
+      <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.audio.pocuvam.radio/plugin.audio.pocuvam.radio-1.0.20.zip</datadir>
     </extension>
-</addon>
+  </addon>
 
-<addon id="plugin.video.flowplay" name="Flow play" version="1.0.0" provider-name="Jarko">
+  <addon id="plugin.video.flowplay" name="Flow play" version="1.0.0" provider-name="Jarko">
     <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
+      <import addon="xbmc.python" version="3.0.0"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
+      <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>Video doplnok Flow play</summary>
-        <platform>all</platform>
-        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.flowplay/plugin.video.flowplay-1.0.0.zip</datadir>
+      <summary>Video doplnok Flow play</summary>
+      <platform>all</platform>
+      <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.flowplay/plugin.video.flowplay-1.0.0.zip</datadir>
     </extension>
-</addon>
+  </addon>
 
-<addon id="plugin.video.tvfree" name="Tv free" version="1.0.0" provider-name="Jarko">
+  <addon id="plugin.video.tvfree" name="Tv free" version="1.0.0" provider-name="Jarko">
     <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
+      <import addon="xbmc.python" version="3.0.0"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
+      <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>Televízia zadarmo</summary>
-        <platform>all</platform>
-        <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.tvfree/plugin.video.tvfree-1.0.0.zip</datadir>
+      <summary>Televízia zadarmo</summary>
+      <platform>all</platform>
+      <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.tvfree/plugin.video.tvfree-1.0.0.zip</datadir>
     </extension>
-</addon>
+  </addon>
 
 </addons>
