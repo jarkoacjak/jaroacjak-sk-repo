@@ -26,6 +26,10 @@
       <summary>Slovenské a české rádiá</summary>
       <platform>all</platform>
       <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.audio.pocuvam.radio/plugin.audio.pocuvam.radio-1.0.18.zip</datadir>
+      <assets>
+        <icon>resources/icon.png</icon>
+        <fanart>resources/fanart.jpg</fanart>
+      </assets>
     </extension>
   </addon>
 
@@ -40,6 +44,10 @@
       <summary>Video doplnok Flow play</summary>
       <platform>all</platform>
       <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.flowplay/plugin.video.flowplay-1.0.1.zip</datadir>
+      <assets>
+        <icon>resources/icon.png</icon>
+        <fanart>resources/fanart.jpg</fanart>
+      </assets>
     </extension>
   </addon>
 
@@ -54,7 +62,12 @@
       <summary>Televízia zadarmo</summary>
       <platform>all</platform>
       <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.tvfree/plugin.video.tvfree-1.0.3.zip</datadir>
+      <assets>
+        <icon>resources/icon.png</icon>
+        <fanart>resources/fanart.jpg</fanart>
+      </assets>
     </extension>
   </addon>
 
 </addons>
+
