@@ -51,7 +51,7 @@
     </extension>
   </addon>
 
-  <addon id="plugin.video.tvfree" name="Tv free" version="1.0.5" provider-name="Jarko">
+  <addon id="plugin.video.tvfree" name="Tv free" version="1.0.6" provider-name="Jarko">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -61,7 +61,7 @@
     <extension point="xbmc.addon.metadata">
       <summary>Televízia zadarmo</summary>
       <platform>all</platform>
-      <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.tvfree/plugin.video.tvfree-1.0.4.zip</datadir>
+      <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.tvfree/plugin.video.tvfree-1.0.6.zip</datadir>
       <assets>
         <icon>resources/icon.png</icon>
         <fanart>resources/fanart.jpg</fanart>
