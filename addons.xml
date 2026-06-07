@@ -15,17 +15,17 @@
     </extension>
   </addon>
 
-  <addon id="plugin.audio.pocuvam.radio" name="Počúvam rádio" version="1.0.20" provider-name="Jarko">
+  <addon id="plugin.audio.pocuvam.radio" name="Počúvam rádio" version="1.0.21" provider-name="Jarko">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
     </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
+    <extension point="xbmc.python.pluginsource" library="main.py">
       <provides>audio</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
       <summary>Slovenské a české rádiá</summary>
       <platform>all</platform>
-      <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.audio.pocuvam.radio/plugin.audio.pocuvam.radio-1.0.20.zip</datadir>
+      <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.audio.pocuvam.radio/plugin.audio.pocuvam.radio-1.0.21.zip</datadir>
       <assets>
         <icon>resources/icon.png</icon>
         <fanart>resources/fanart.jpg</fanart>
@@ -37,7 +37,7 @@
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
     </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
+    <extension point="xbmc.python.pluginsource" library="main.py">
       <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
@@ -51,17 +51,17 @@
     </extension>
   </addon>
 
-  <addon id="plugin.video.tvfree" name="Tv free" version="1.0.9" provider-name="Jarko">
+  <addon id="plugin.video.tvfree" name="Tv free" version="1.0.10" provider-name="Jarko">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
     </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
+    <extension point="xbmc.python.pluginsource" library="main.py">
       <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
       <summary>Televízia zadarmo</summary>
       <platform>all</platform>
-      <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.tvfree/plugin.video.tvfree-1.0.9.zip</datadir>
+      <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.tvfree/plugin.video.tvfree-1.0.10.zip</datadir>
       <assets>
         <icon>resources/icon.png</icon>
         <fanart>resources/fanart.jpg</fanart>
