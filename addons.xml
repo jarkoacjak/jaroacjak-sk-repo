@@ -33,7 +33,7 @@
     </extension>
   </addon>
 
-  <addon id="plugin.video.flowplay" name="Flow play" version="1.0.1" provider-name="Jarko">
+  <addon id="plugin.video.flowplay" name="Flow play" version="1.0.2" provider-name="Jarko a Koviko">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -43,7 +43,7 @@
     <extension point="xbmc.addon.metadata">
       <summary>Video doplnok Flow play</summary>
       <platform>all</platform>
-      <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.flowplay/plugin.video.flowplay-1.0.1.zip</datadir>
+      <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.flowplay/plugin.video.flowplay-1.0.2.zip</datadir>
       <assets>
         <icon>resources/icon.png</icon>
         <fanart>resources/fanart.jpg</fanart>
