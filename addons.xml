@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
 
-  <addon id="repository.jarkoacjak" name="jarkoacjak repo" version="1.0.0" provider-name="Jarko">
+  <addon id="kodirepoczsk" name="Kodi Repo CZ/Sk" version="1.0.0" provider-name="Jarko">
     <extension point="xbmc.addon.repository" name="jarkoacjak repo">
       <dir>
         <info compressed="false">https://jarkoacjak.github.io/jaroacjak-sk-repo/addons.xml</info>
@@ -15,7 +15,7 @@
     </extension>
   </addon>
 
-  <addon id="plugin.audio.pocuvam.radio" name="Počúvam rádio" version="1.0.25" provider-name="Jarko">
+  <addon id="plugin.audio.pocuvam.radio" name="Počúvam rádio" version="1.0.27" provider-name="Jarko">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -51,7 +51,7 @@
     </extension>
   </addon>
 
-  <addon id="plugin.video.tvfree" name="Tv free" version="1.0.10" provider-name="Jarko">
+  <addon id="plugin.video.tvfree" name="Tv free" version="1.0.12" provider-name="Jarko">
     <requires>
       <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -61,7 +61,7 @@
     <extension point="xbmc.addon.metadata">
       <summary>Televízia zadarmo</summary>
       <platform>all</platform>
-      <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.tvfree/plugin.video.tvfree-1.0.10.zip</datadir>
+      <datadir zip="true">https://jarkoacjak.github.io/jaroacjak-sk-repo/plugin.video.tvfree/plugin.video.tvfree-1.0.12.zip</datadir>
       <assets>
         <icon>resources/icon.png</icon>
         <fanart>resources/fanart.jpg</fanart>
